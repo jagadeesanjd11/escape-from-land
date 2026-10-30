@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b47v56moeorde"]
+
+[ext_resource type="AudioStream" uid="uid://dtd55tth6pvvp" path="res://assets/Sounds/bg/the_mountain.mp3" id="1_fpj07"]
+
+[node name="bgMusic" type="Node2D" unique_id=133999180]
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1696754613]
+stream = ExtResource("1_fpj07")
+volume_db = -10.124
+autoplay = true
+parameters/looping = true

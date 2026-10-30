@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://f0djv8gpmcxr"]
+
+[ext_resource type="Script" uid="uid://dsjukla8wq6f2" path="res://scripts/game_paused.gd" id="1_3a4jn"]
+[ext_resource type="FontFile" uid="uid://dqjorj1otiub5" path="res://assets/fonts/MotionControl-Bold.otf" id="2_3dsps"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hxod"]
+bg_color = Color(0.23137255, 0.6627451, 0.74509805, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72o55"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo06a"]
+bg_color = Color(0.7294118, 0, 0.21960784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dsps"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15se8"]
+bg_color = Color(0.64422756, 0.6441212, 0.13035846, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4mma"]
+
+[node name="gamePaused" type="CanvasLayer" unique_id=1924133955]
+process_mode = 3
+script = ExtResource("1_3a4jn")
+
+[node name="gamePused" type="Node2D" parent="." unique_id=1682649985]
+
+[node name="cotinueBtn" type="Button" parent="gamePused" unique_id=485622865]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 801.0
+offset_top = 378.0
+offset_right = 1122.0
+offset_bottom = 489.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_3dsps")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_8hxod")
+theme_override_styles/hover = SubResource("StyleBoxFlat_72o55")
+text = "Continue"
+
+[node name="exitBtn" type="Button" parent="gamePused" unique_id=1064624051]
+offset_left = 879.0
+offset_top = 713.0
+offset_right = 1049.0
+offset_bottom = 808.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_3dsps")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_bo06a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3dsps")
+text = "Exit"
+
+[node name="restartBtn" type="Button" parent="gamePused" unique_id=1746019295]
+offset_left = 834.0
+offset_top = 550.0
+offset_right = 1088.0
+offset_bottom = 659.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_3dsps")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_15se8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q4mma")
+text = "Restart"
+
+[connection signal="pressed" from="gamePused/cotinueBtn" to="." method="_on_cotinue_btn_pressed"]
+[connection signal="pressed" from="gamePused/exitBtn" to="." method="_on_exit_btn_pressed"]
+[connection signal="pressed" from="gamePused/restartBtn" to="." method="_on_restart_btn_pressed"]

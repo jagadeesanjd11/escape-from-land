@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://r0ituhten61u"]
+
+[ext_resource type="Script" uid="uid://byyqrmgho62lw" path="res://scripts/coin.gd" id="1_leebs"]
+[ext_resource type="Texture2D" uid="uid://dvm7xqtdy0h88" path="res://assets/Spritesheets/spritesheet-tiles-double.png" id="1_s0dlu"]
+[ext_resource type="AudioStream" uid="uid://dtd5ritwnqkbt" path="res://assets/Sounds/sfx_coin.ogg" id="2_ya73g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya73g"]
+atlas = ExtResource("1_s0dlu")
+region = Rect2(0, 258, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leebs"]
+atlas = ExtResource("1_s0dlu")
+region = Rect2(129, 258, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vxhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya73g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leebs")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vxhi"]
+radius = 37.0
+
+[node name="coin" type="Node2D" unique_id=499694729]
+script = ExtResource("1_leebs")
+
+[node name="coinArea" type="Area2D" parent="." unique_id=867747279]
+
+[node name="coinAni" type="AnimatedSprite2D" parent="coinArea" unique_id=672407146]
+sprite_frames = SubResource("SpriteFrames_8vxhi")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coinArea" unique_id=2101248127]
+shape = SubResource("CircleShape2D_8vxhi")
+
+[node name="coinSound" type="AudioStreamPlayer2D" parent="coinArea" unique_id=1908551570]
+stream = ExtResource("2_ya73g")
+
+[connection signal="body_entered" from="coinArea" to="." method="_on_coin_area_body_entered"]

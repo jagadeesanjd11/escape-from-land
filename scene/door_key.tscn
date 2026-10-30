@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://co23em1jdyk3r"]
+
+[ext_resource type="Texture2D" uid="uid://d1l1aokges14a" path="res://assets/Vector/Tiles/key_green.svg" id="1_lxuvx"]
+[ext_resource type="Script" uid="uid://fmgr4mrk6opy" path="res://scripts/door_key.gd" id="1_wp107"]
+[ext_resource type="AudioStream" uid="uid://bdhblukjh5prb" path="res://assets/Sounds/sfx_gem.ogg" id="2_j4lpk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8vxhi"]
+radius = 24.0
+height = 50.0
+
+[node name="doorKey" type="Node2D" unique_id=138178562]
+script = ExtResource("1_wp107")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1242828334]
+texture = ExtResource("1_lxuvx")
+
+[node name="keyArea" type="Area2D" parent="." unique_id=190761895]
+
+[node name="keyColl" type="CollisionShape2D" parent="keyArea" unique_id=1384732436]
+shape = SubResource("CapsuleShape2D_8vxhi")
+
+[node name="soundKey" type="AudioStreamPlayer2D" parent="." unique_id=509024480]
+stream = ExtResource("2_j4lpk")
+
+[connection signal="body_exited" from="keyArea" to="." method="_on_key_area_body_exited"]

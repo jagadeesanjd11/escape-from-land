@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bgfxr4kp02htl"]
+
+[ext_resource type="Script" uid="uid://wkdpkjpg6e2n" path="res://scripts/menu.gd" id="1_8hxod"]
+[ext_resource type="Texture2D" uid="uid://xmy3gkpvwwtt" path="res://assets/Sprites/Backgrounds/Default/background_clouds.png" id="1_e5g8k"]
+[ext_resource type="FontFile" uid="uid://dqjorj1otiub5" path="res://assets/fonts/MotionControl-Bold.otf" id="3_bo06a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13m1y"]
+bg_color = Color(0.23216558, 0.6644609, 0.74603605, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yhvw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb0l6"]
+bg_color = Color(0.729646, 0, 0.21833089, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_063ov"]
+
+[node name="menu" type="CanvasLayer" unique_id=2054012757]
+script = ExtResource("1_8hxod")
+
+[node name="bg" type="Node2D" parent="." unique_id=1727638441]
+
+[node name="Parallax2D" type="Parallax2D" parent="bg" unique_id=2109666759]
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="bg/Parallax2D" unique_id=1041292780]
+position = Vector2(961, 533.5)
+scale = Vector2(7.5, 4.1992188)
+texture = ExtResource("1_e5g8k")
+
+[node name="playBtn" type="Button" parent="." unique_id=38164676]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -68.0
+offset_right = 147.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_bo06a")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_13m1y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1yhvw")
+text = "Play"
+icon_alignment = 1
+
+[node name="exitBtn" type="Button" parent="." unique_id=1182143720]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = 115.0
+offset_right = 148.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_bo06a")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_sb0l6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_063ov")
+text = "Exit"
+icon_alignment = 1
+
+[connection signal="pressed" from="playBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="exitBtn" to="." method="_on_exit_btn_pressed"]

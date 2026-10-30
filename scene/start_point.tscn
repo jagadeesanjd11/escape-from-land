@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bke5i802mc52t"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s2eko"]
+normal = Vector2(0.9997051, -0.024284335)
+distance = -257.74988
+
+[node name="startPoint" type="Node2D" unique_id=1566252178]
+
+[node name="end" type="StaticBody2D" parent="." unique_id=1136011324]
+
+[node name="endColl" type="CollisionShape2D" parent="end" unique_id=961189358]
+position = Vector2(-453, 153)
+shape = SubResource("WorldBoundaryShape2D_s2eko")

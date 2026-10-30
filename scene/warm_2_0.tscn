@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cn6e6mycovq68"]
+
+[ext_resource type="AudioStream" uid="uid://blwynx15rtjxe" path="res://assets/Sounds/sfx_hurt.ogg" id="1_bwmof"]
+[ext_resource type="Texture2D" uid="uid://bbgxevqah02yi" path="res://assets/Spritesheets/spritesheet-enemies-double.png" id="2_lcayt"]
+
+[sub_resource type="GDScript" id="GDScript_yhfrr"]
+script/source = "extends CharacterBody2D
+@onready var warmAni2_0 = $warmAni2_0
+@onready var soundHurt:AudioStreamPlayer2D = $soundHurt
+@onready var player:CharacterBody2D = $\"../player\"
+@export var move_speed:float = 330.0
+@export var target: CharacterBody2D
+
+var follow:bool = true
+var time_passed: float = 0.0
+var wait_time: float = 2 # Wait for 2 seconds
+func _ready() -> void:
+	warmAni2_0.flip_h = true
+	warmAni2_0.play(\"default\")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if follow == true:
+		var direction = position.direction_to(player.global_position).normalized()
+		velocity = direction * move_speed
+		move_and_slide()
+	else:
+		var direction: Vector2 = global_position.direction_to(Vector2(473,572))
+		velocity = direction * move_speed
+		move_and_slide()
+		
+		#anime
+		time_passed += delta
+		if time_passed >= wait_time:
+			#print(\"Timeout reached!\")
+			if warmAni2_0.flip_h == true:
+				warmAni2_0.flip_h = false
+			else:
+				warmAni2_0.flip_h = true
+			time_passed = 0.0 # Reset the timer loop
+			$AnimationPlayer.play(\"moving\")
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		
+func _on_warm_area_2_0_body_entered(body: Node2D) -> void:
+	Coman.hurt(body, soundHurt)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drfcf"]
+atlas = ExtResource("2_lcayt")
+region = Rect2(129, 903, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4spm"]
+atlas = ExtResource("2_lcayt")
+region = Rect2(258, 903, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t04yg"]
+atlas = ExtResource("2_lcayt")
+region = Rect2(387, 903, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3up5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drfcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4spm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t04yg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vxhi"]
+size = Vector2(100, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2eko"]
+size = Vector2(127, 60)
+
+[node name="warm_2_0" type="CharacterBody2D" unique_id=1675397235]
+script = SubResource("GDScript_yhfrr")
+
+[node name="soundHurt" type="AudioStreamPlayer2D" parent="." unique_id=1248396714]
+stream = ExtResource("1_bwmof")
+
+[node name="warmAni2_0" type="AnimatedSprite2D" parent="." unique_id=363808017]
+sprite_frames = SubResource("SpriteFrames_3up5l")
+autoplay = "default"
+
+[node name="Coll" type="CollisionShape2D" parent="." unique_id=619392250]
+position = Vector2(3, 34)
+shape = SubResource("RectangleShape2D_8vxhi")
+
+[node name="warmArea_2_0" type="Area2D" parent="." unique_id=1427423863]
+
+[node name="collWarm_2_0" type="CollisionShape2D" parent="warmArea_2_0" unique_id=545618482]
+position = Vector2(1.5, 33)
+shape = SubResource("RectangleShape2D_s2eko")
+
+[connection signal="body_entered" from="warmArea_2_0" to="." method="_on_warm_area_2_0_body_entered"]

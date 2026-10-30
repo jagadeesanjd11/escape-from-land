@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bf4vri0pggq8b"]
+
+[ext_resource type="Script" uid="uid://b0ov28xw8f0uo" path="res://scripts/menu_next.gd" id="1_72o55"]
+[ext_resource type="AudioStream" uid="uid://cqm44frmm2rr4" path="res://assets/Sounds/winSound.mp3" id="2_supkm"]
+[ext_resource type="FontFile" uid="uid://dqjorj1otiub5" path="res://assets/fonts/MotionControl-Bold.otf" id="2_voo6c"]
+[ext_resource type="Texture2D" uid="uid://xmy3gkpvwwtt" path="res://assets/Sprites/Backgrounds/Default/background_clouds.png" id="3_pat22"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4mma"]
+bg_color = Color(0.23137255, 0.6627451, 0.74509805, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08ybn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dsps"]
+bg_color = Color(0.34029633, 0.49326253, 0.26500258, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m42xt"]
+
+[node name="menu_next" type="Node2D" unique_id=1849745653]
+script = ExtResource("1_72o55")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=344985849]
+
+[node name="won" type="Label" parent="CanvasLayer" unique_id=218081241]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -562.0
+offset_top = 90.0
+offset_right = 585.0
+offset_bottom = 289.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.8460975, 0.681199, 0.051031023, 1)
+theme_override_fonts/font = ExtResource("2_voo6c")
+theme_override_font_sizes/font_size = 95
+text = "You Won"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="nxtBtn" type="Button" parent="CanvasLayer" unique_id=581963091]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.5
+offset_top = -75.0
+offset_right = 200.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_voo6c")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_q4mma")
+theme_override_styles/hover = SubResource("StyleBoxFlat_08ybn")
+text = "Next Level"
+
+[node name="menu" type="Button" parent="CanvasLayer" unique_id=1943818576]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 134.0
+offset_right = 131.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_voo6c")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_3dsps")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m42xt")
+text = "Menu"
+
+[node name="winSound" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=936636847]
+stream = ExtResource("2_supkm")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1947268790]
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1750850522]
+position = Vector2(961, 533.5)
+scale = Vector2(7.5, 4.1992188)
+texture = ExtResource("3_pat22")
+
+[connection signal="pressed" from="CanvasLayer/nxtBtn" to="." method="_on_nxt_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/menu" to="." method="_on_menu_pressed"]

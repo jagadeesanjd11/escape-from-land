@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://r6oh7b835sgi"]
+
+[ext_resource type="Texture2D" uid="uid://bbgxevqah02yi" path="res://assets/Spritesheets/spritesheet-enemies-double.png" id="1_a0r0u"]
+[ext_resource type="Script" uid="uid://jxcejl571hv3" path="res://scripts/teni_2_0.gd" id="1_xlwdf"]
+[ext_resource type="AudioStream" uid="uid://blwynx15rtjxe" path="res://assets/Sounds/sfx_hurt.ogg" id="3_umt5n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlwdf"]
+atlas = ExtResource("1_a0r0u")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umt5n"]
+atlas = ExtResource("1_a0r0u")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q5ag"]
+atlas = ExtResource("1_a0r0u")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vxhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlwdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umt5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q5ag")
+}],
+"loop": 1,
+"name": &"flay",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vxhi"]
+radius = 61.13101
+
+[node name="teni2_0" type="CharacterBody2D" unique_id=124431]
+script = ExtResource("1_xlwdf")
+
+[node name="teniAni2_0" type="AnimatedSprite2D" parent="." unique_id=1149219460]
+sprite_frames = SubResource("SpriteFrames_8vxhi")
+animation = &"flay"
+frame_progress = 0.2658315
+
+[node name="Coll" type="CollisionPolygon2D" parent="." unique_id=150358768]
+polygon = PackedVector2Array(-22, 41, 24, 39, 58, 16, 40, -1, 55, -31, 24, -52, 6, -36, -36, -47, -51, -25, -44, -11, -53, 8, -42, 32)
+
+[node name="teniArea_2_0" type="Area2D" parent="." unique_id=384742733]
+
+[node name="collTeni_2_0" type="CollisionShape2D" parent="teniArea_2_0" unique_id=2108789754]
+shape = SubResource("CircleShape2D_8vxhi")
+
+[node name="soundHurt" type="AudioStreamPlayer2D" parent="." unique_id=927925041]
+stream = ExtResource("3_umt5n")
+
+[connection signal="body_entered" from="teniArea_2_0" to="." method="_on_teni_area_2_0_body_entered"]

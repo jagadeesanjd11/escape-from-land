@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://vqn7cxd4a6q0"]
+
+[ext_resource type="Texture2D" uid="uid://bbgxevqah02yi" path="res://assets/Spritesheets/spritesheet-enemies-double.png" id="1_we41q"]
+[ext_resource type="Script" uid="uid://3vdsg3d2puy" path="res://scripts/enemy_flay.gd" id="1_y6ba4"]
+[ext_resource type="AudioStream" uid="uid://blwynx15rtjxe" path="res://assets/Sounds/sfx_hurt.ogg" id="3_0mucm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6ba4"]
+atlas = ExtResource("1_we41q")
+region = Rect2(258, 258, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mucm"]
+atlas = ExtResource("1_we41q")
+region = Rect2(387, 258, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lye6q"]
+atlas = ExtResource("1_we41q")
+region = Rect2(516, 258, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vxhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6ba4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mucm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lye6q")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vxhi"]
+radius = 39.20459
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2eko"]
+radius = 60.00833
+
+[node name="enemyFlay" type="CharacterBody2D" unique_id=1927816291]
+script = ExtResource("1_y6ba4")
+
+[node name="flayAni" type="AnimatedSprite2D" parent="." unique_id=1671810213]
+sprite_frames = SubResource("SpriteFrames_8vxhi")
+autoplay = "default"
+frame_progress = 0.89433247
+
+[node name="flayColl" type="CollisionShape2D" parent="." unique_id=695516767]
+shape = SubResource("CircleShape2D_8vxhi")
+
+[node name="flayArea" type="Area2D" parent="." unique_id=1122743517]
+
+[node name="flayAreaColl" type="CollisionShape2D" parent="flayArea" unique_id=547762820]
+shape = SubResource("CircleShape2D_s2eko")
+
+[node name="soundHurt" type="AudioStreamPlayer2D" parent="." unique_id=1672443129]
+stream = ExtResource("3_0mucm")
+
+[connection signal="body_entered" from="flayArea" to="." method="_on_flay_area_body_entered"]

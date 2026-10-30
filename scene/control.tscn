@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bt3fhduir7dco"]
+
+[ext_resource type="Texture2D" uid="uid://b2jjfm72aofh2" path="res://assets/control/left.png" id="1_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://genqiwu3xxho" path="res://assets/control/right.png" id="2_kbped"]
+[ext_resource type="Texture2D" uid="uid://ctco1gkefm1y1" path="res://assets/control/up.png" id="3_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://bip84wiwxldnw" path="res://assets/control/pause.png" id="4_iy58a"]
+
+[node name="control" type="Node2D" unique_id=227835840]
+scale = Vector2(0.84000003, 0.92)
+metadata/_edit_horizontal_guides_ = [978.0, 419.0]
+metadata/_edit_vertical_guides_ = [1577.0]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1980235705]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="esc" type="TouchScreenButton" parent="HBoxContainer" unique_id=2063496259]
+position = Vector2(2084.5237, 64.13043)
+scale = Vector2(1.7361915, 1.536936)
+texture_normal = ExtResource("4_iy58a")
+action = "esc"
+
+[node name="jump" type="TouchScreenButton" parent="HBoxContainer" unique_id=823007958]
+position = Vector2(2016.6665, 917.3913)
+scale = Vector2(1.95143, 1.8043475)
+texture_normal = ExtResource("3_fj5cn")
+action = "jump"
+
+[node name="right" type="TouchScreenButton" parent="HBoxContainer" unique_id=1796036419]
+position = Vector2(374.99997, 919.5652)
+scale = Vector2(1.9638102, 1.6713054)
+texture_normal = ExtResource("2_kbped")
+action = "move_right"
+
+[node name="left" type="TouchScreenButton" parent="HBoxContainer" unique_id=431586849]
+position = Vector2(82.142845, 921.73895)
+scale = Vector2(1.9361908, 1.7113051)
+texture_normal = ExtResource("1_ee4bf")
+action = "move_left"

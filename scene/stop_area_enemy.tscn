@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://o7k2afo0h6kd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vxhi"]
+size = Vector2(576.5, 838)
+
+[node name="stop_area_enemy" type="Area2D" unique_id=1376071482]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=940599982]
+position = Vector2(1627.25, 585)
+shape = SubResource("RectangleShape2D_8vxhi")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

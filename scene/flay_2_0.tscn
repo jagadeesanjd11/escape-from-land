@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://hgekmo6xsuen"]
+
+[ext_resource type="AudioStream" uid="uid://blwynx15rtjxe" path="res://assets/Sounds/sfx_hurt.ogg" id="1_5kur6"]
+[ext_resource type="Script" uid="uid://bajmts4ouev16" path="res://scripts/flay_2_0.gd" id="1_cueb3"]
+[ext_resource type="Texture2D" uid="uid://bbgxevqah02yi" path="res://assets/Spritesheets/spritesheet-enemies-double.png" id="2_cueb3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l8on"]
+atlas = ExtResource("2_cueb3")
+region = Rect2(516, 258, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esnps"]
+atlas = ExtResource("2_cueb3")
+region = Rect2(387, 258, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7aq5"]
+atlas = ExtResource("2_cueb3")
+region = Rect2(258, 258, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vxhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l8on")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esnps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7aq5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vxhi"]
+radius = 37.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2eko"]
+radius = 60.166435
+
+[node name="flay_2_0" type="CharacterBody2D" unique_id=1675397235]
+script = ExtResource("1_cueb3")
+
+[node name="soundHurt" type="AudioStreamPlayer2D" parent="." unique_id=1248396714]
+stream = ExtResource("1_5kur6")
+
+[node name="flayAni2_0" type="AnimatedSprite2D" parent="." unique_id=363808017]
+sprite_frames = SubResource("SpriteFrames_8vxhi")
+
+[node name="Coll" type="CollisionShape2D" parent="." unique_id=619392250]
+shape = SubResource("CircleShape2D_8vxhi")
+
+[node name="flayArea_2_0" type="Area2D" parent="." unique_id=1427423863]
+
+[node name="collFlay_2_0" type="CollisionShape2D" parent="flayArea_2_0" unique_id=545618482]
+shape = SubResource("CircleShape2D_s2eko")
+
+[connection signal="body_exited" from="flayArea_2_0" to="." method="_on_flay_area_2_0_body_exited"]

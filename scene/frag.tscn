@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://diasrk2soi2jx"]
+
+[ext_resource type="Script" uid="uid://dolpt8peiippv" path="res://scripts/frag.gd" id="1_a4pqi"]
+[ext_resource type="Texture2D" uid="uid://bbgxevqah02yi" path="res://assets/Spritesheets/spritesheet-enemies-double.png" id="1_a8v0c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tembv"]
+atlas = ExtResource("1_a8v0c")
+region = Rect2(903, 258, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h483"]
+atlas = ExtResource("1_a8v0c")
+region = Rect2(774, 258, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0rrb"]
+atlas = ExtResource("1_a8v0c")
+region = Rect2(645, 258, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vxhi"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_tembv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h483")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0rrb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vxhi"]
+radius = 79.881165
+
+[node name="frag" type="CharacterBody2D" unique_id=2041719102]
+script = ExtResource("1_a4pqi")
+
+[node name="fragAni" type="AnimatedSprite2D" parent="." unique_id=181071626]
+sprite_frames = SubResource("SpriteFrames_8vxhi")
+autoplay = "default"
+frame_progress = 0.6035611
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693949099]
+shape = SubResource("CircleShape2D_8vxhi")

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bscy55m1wymbr"]
+
+[ext_resource type="Script" uid="uid://ckpuetd46x7w5" path="res://scripts/enemy_box.gd" id="1_2p1rq"]
+[ext_resource type="Texture2D" uid="uid://bbgxevqah02yi" path="res://assets/Spritesheets/spritesheet-enemies-double.png" id="1_i7gcr"]
+[ext_resource type="AudioStream" uid="uid://blwynx15rtjxe" path="res://assets/Sounds/sfx_hurt.ogg" id="3_gmp62"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p1rq"]
+atlas = ExtResource("1_i7gcr")
+region = Rect2(258, 516, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmp62"]
+atlas = ExtResource("1_i7gcr")
+region = Rect2(387, 516, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8ohd"]
+atlas = ExtResource("1_i7gcr")
+region = Rect2(516, 516, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rktyq"]
+atlas = ExtResource("1_i7gcr")
+region = Rect2(645, 516, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vxhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p1rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmp62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8ohd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rktyq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vxhi"]
+size = Vector2(142, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2eko"]
+size = Vector2(107, 117)
+
+[node name="enemyBox" type="CharacterBody2D" unique_id=1690116760]
+script = ExtResource("1_2p1rq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1986732398]
+sprite_frames = SubResource("SpriteFrames_8vxhi")
+autoplay = "default"
+
+[node name="enemyArea" type="Area2D" parent="." unique_id=910631812]
+
+[node name="CollArea" type="CollisionShape2D" parent="enemyArea" unique_id=1637466227]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_8vxhi")
+
+[node name="soundHurt" type="AudioStreamPlayer2D" parent="." unique_id=1833445881]
+stream = ExtResource("3_gmp62")
+
+[node name="boxColl" type="CollisionShape2D" parent="." unique_id=665728841]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_s2eko")
+
+[connection signal="body_exited" from="enemyArea" to="." method="_on_enemy_area_body_exited"]

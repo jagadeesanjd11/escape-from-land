@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b81sk8qdolmm8"]
+
+[ext_resource type="Script" uid="uid://cpec2p63wa2ig" path="res://scripts/enemy_teni.gd" id="1_1ymgw"]
+[ext_resource type="Texture2D" uid="uid://bbgxevqah02yi" path="res://assets/Spritesheets/spritesheet-enemies-double.png" id="1_h08p8"]
+[ext_resource type="AudioStream" uid="uid://blwynx15rtjxe" path="res://assets/Sounds/sfx_hurt.ogg" id="3_ummdk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f87vc"]
+atlas = ExtResource("1_h08p8")
+region = Rect2(645, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u16h"]
+atlas = ExtResource("1_h08p8")
+region = Rect2(516, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7koy"]
+atlas = ExtResource("1_h08p8")
+region = Rect2(387, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vxhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f87vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u16h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7koy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8vxhi"]
+radius = 48.0
+height = 112.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2eko"]
+radius = 66.0
+height = 134.0
+
+[node name="enemyTeni" type="CharacterBody2D" unique_id=1600189340]
+script = ExtResource("1_1ymgw")
+
+[node name="enemyTeniAni" type="AnimatedSprite2D" parent="." unique_id=307719201]
+sprite_frames = SubResource("SpriteFrames_8vxhi")
+autoplay = "default"
+frame_progress = 0.42630398
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2009246868]
+shape = SubResource("CapsuleShape2D_8vxhi")
+
+[node name="teniArea" type="Area2D" parent="." unique_id=1606432070]
+
+[node name="teniCollArea" type="CollisionShape2D" parent="teniArea" unique_id=659432635]
+position = Vector2(2, -2)
+shape = SubResource("CapsuleShape2D_s2eko")
+
+[node name="soundHurt" type="AudioStreamPlayer2D" parent="." unique_id=327615555]
+stream = ExtResource("3_ummdk")
+
+[connection signal="body_entered" from="teniArea" to="." method="_on_teni_area_body_entered"]

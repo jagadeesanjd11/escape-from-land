@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cash2p5y5vo55"]
+
+[ext_resource type="Texture2D" uid="uid://bbgxevqah02yi" path="res://assets/Spritesheets/spritesheet-enemies-double.png" id="1_bcnh6"]
+[ext_resource type="Script" uid="uid://5qxxvnekgqx7" path="res://scripts/enemy_warm.gd" id="1_wj4bn"]
+[ext_resource type="AudioStream" uid="uid://blwynx15rtjxe" path="res://assets/Sounds/sfx_hurt.ogg" id="2_uy8fw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy8fw"]
+atlas = ExtResource("1_bcnh6")
+region = Rect2(129, 903, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj4bn"]
+atlas = ExtResource("1_bcnh6")
+region = Rect2(258, 903, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4xbc"]
+atlas = ExtResource("1_bcnh6")
+region = Rect2(387, 903, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vxhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy8fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj4bn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4xbc")
+}],
+"loop": 1,
+"name": &"moving",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vxhi"]
+size = Vector2(109, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2t3k"]
+size = Vector2(101.525, 59.34546)
+
+[node name="enemyWarm" type="CharacterBody2D" unique_id=1509510137]
+script = ExtResource("1_wj4bn")
+
+[node name="enemyWarmAni" type="AnimatedSprite2D" parent="." unique_id=29850107]
+sprite_frames = SubResource("SpriteFrames_8vxhi")
+animation = &"moving"
+autoplay = "moving"
+
+[node name="warmColl" type="CollisionShape2D" parent="." unique_id=1135431214]
+position = Vector2(-1.5, 35.5)
+shape = SubResource("RectangleShape2D_8vxhi")
+
+[node name="warmArea" type="Area2D" parent="." unique_id=129639133]
+scale = Vector2(1.2903225, 1.1458333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="warmArea" unique_id=2062058598]
+position = Vector2(0.38749927, 29.67273)
+shape = SubResource("RectangleShape2D_d2t3k")
+
+[node name="soundHurt" type="AudioStreamPlayer2D" parent="." unique_id=439655747]
+stream = ExtResource("2_uy8fw")
+
+[connection signal="body_entered" from="warmArea" to="." method="_on_warm_area_body_entered"]

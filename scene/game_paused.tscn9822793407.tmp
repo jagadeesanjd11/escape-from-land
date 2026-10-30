@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://f0djv8gpmcxr"]
+
+[ext_resource type="Script" uid="uid://dsjukla8wq6f2" path="res://scripts/game_paused.gd" id="1_3a4jn"]
+
+[sub_resource type="GDScript" id="GDScript_q4mma"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	print(\"ok...........\")
+	Coman.gamePaused = false
+	get_tree().paused = Coman.gamePaused
+	hide()
+"
+
+[node name="gamePaused" type="CanvasLayer" unique_id=1924133955]
+script = ExtResource("1_3a4jn")
+
+[node name="gamePused" type="Node2D" parent="." unique_id=1682649985]
+
+[node name="cotinueBtn" type="Button" parent="gamePused" unique_id=485622865]
+offset_left = 421.0
+offset_top = 231.0
+offset_right = 658.0
+offset_bottom = 311.0
+theme_override_font_sizes/font_size = 52
+text = "Continue"
+script = SubResource("GDScript_q4mma")
+
+[node name="exitBtn" type="Button" parent="gamePused" unique_id=1064624051]
+offset_left = 488.0
+offset_top = 372.0
+offset_right = 589.0
+offset_bottom = 452.0
+theme_override_font_sizes/font_size = 52
+text = "Exit"
+
+[connection signal="pressed" from="gamePused/cotinueBtn" to="gamePused/cotinueBtn" method="_on_pressed"]
+[connection signal="pressed" from="gamePused/exitBtn" to="." method="_on_exit_btn_pressed"]

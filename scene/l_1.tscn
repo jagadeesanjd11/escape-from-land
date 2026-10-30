@@ -1,0 +1,288 @@
+[gd_scene format=4 uid="uid://c3n7u4ihdb662"]
+
+[ext_resource type="Script" uid="uid://bgt31bh0uyr53" path="res://scripts/l_1.gd" id="1_x2tal"]
+[ext_resource type="Texture2D" uid="uid://c6pn0otcw32mi" path="res://assets/ground.png" id="2_e3naj"]
+[ext_resource type="PackedScene" uid="uid://bvx83ehcpbdds" path="res://scene/platform.tscn" id="3_1marv"]
+[ext_resource type="PackedScene" uid="uid://uw0o6ovrymhm" path="res://scene/player.tscn" id="4_sgvlu"]
+[ext_resource type="PackedScene" uid="uid://r0ituhten61u" path="res://scene/coin.tscn" id="5_32x67"]
+[ext_resource type="PackedScene" uid="uid://db66vvt2m6g7x" path="res://scene/coin_score.tscn" id="6_vhp5f"]
+[ext_resource type="PackedScene" uid="uid://cxlvbqipawaqg" path="res://scene/health.tscn" id="6_xlef1"]
+[ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="8_u2bxs"]
+[ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="9_e3naj"]
+[ext_resource type="PackedScene" uid="uid://b81sk8qdolmm8" path="res://scene/enemyTeni.tscn" id="10_k2dri"]
+[ext_resource type="PackedScene" uid="uid://havttcdynfwt" path="res://scene/health_addon.tscn" id="11_mi3b7"]
+[ext_resource type="PackedScene" uid="uid://f0djv8gpmcxr" path="res://scene/game_paused.tscn" id="12_5yrwr"]
+[ext_resource type="PackedScene" uid="uid://cfxwoxeiu4wsp" path="res://scene/end_door.tscn" id="13_ab4ps"]
+[ext_resource type="PackedScene" uid="uid://bke5i802mc52t" path="res://scene/start_point.tscn" id="13_ye7wa"]
+[ext_resource type="PackedScene" uid="uid://co23em1jdyk3r" path="res://scene/door_key.tscn" id="14_u2bxs"]
+[ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="15_kk6hu"]
+[ext_resource type="PackedScene" uid="uid://bscy55m1wymbr" path="res://scene/enemy_box.tscn" id="17_kk6hu"]
+[ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="17_ypo0x"]
+[ext_resource type="Texture2D" uid="uid://blohdifbda5ff" path="res://assets/tree.png" id="19_ypo0x"]
+[ext_resource type="PackedScene" uid="uid://ccdx7q4lu4qof" path="res://scene/death_zone_2.tscn" id="20_08ybn"]
+[ext_resource type="PackedScene" uid="uid://cxmnfoi3ofwr6" path="res://scene/endpoint.tscn" id="22_08ybn"]
+[ext_resource type="PackedScene" uid="uid://b47v56moeorde" path="res://scene/bg_music.tscn" id="23_m42xt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypo0x"]
+texture = ExtResource("2_e3naj")
+separation = Vector2i(2, 1)
+texture_region_size = Vector2i(150, 150)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_8vxhi"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_ypo0x")
+
+[sub_resource type="Animation" id="Animation_6lq1s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(432, 264.99997)]
+}
+
+[sub_resource type="Animation" id="Animation_xlef1"]
+resource_name = "upDown"
+length = 3.0000000000000004
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(432, 264.99997), Vector2(473.00003, 551)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k2dri"]
+_data = {
+&"RESET": SubResource("Animation_6lq1s"),
+&"upDown": SubResource("Animation_xlef1")
+}
+
+[sub_resource type="Animation" id="Animation_kk6hu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../enemyTeni:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1387, 573)]
+}
+
+[sub_resource type="Animation" id="Animation_e3naj"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../enemyTeni:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1387, 573), Vector2(1180, 573)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ypo0x"]
+_data = {
+&"RESET": SubResource("Animation_kk6hu"),
+&"move": SubResource("Animation_e3naj")
+}
+
+[sub_resource type="Animation" id="Animation_ye7wa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-382, 587)]
+}
+
+[sub_resource type="Animation" id="Animation_08ybn"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-382, 587), Vector2(-390, 792)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m42xt"]
+_data = {
+&"RESET": SubResource("Animation_ye7wa"),
+&"move": SubResource("Animation_08ybn")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14tts"]
+texture = ExtResource("19_ypo0x")
+separation = Vector2i(2, 2)
+texture_region_size = Vector2i(408, 508)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_s2eko"]
+tile_size = Vector2i(408, 508)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_14tts")
+
+[node name="L1" type="Node2D" unique_id=734086104]
+script = ExtResource("1_x2tal")
+
+[node name="tiles" type="TileMapLayer" parent="." unique_id=1428926501]
+position = Vector2(0, -5)
+tile_map_data = PackedByteArray("AAANAAgAAQADAAAAAAANAAcAAQADAAAAAAANAAYAAQADAAAAAAAOAAYAAQADAAAAAAAPAAYAAQADAAAAAAAOAAcAAQADAAAAAAAPAAcAAQADAAAAAAAPAAgAAQADAAAAAAAOAAgAAQADAAAAAAAQAAgAAQADAAAAAAAQAAcAAQADAAAAAAAQAAYAAQADAAAAAAAQAAUAAQADAAAAAAARAAUAAQADAAAAAAASAAUAAQADAAAAAAATAAUAAQADAAAAAAAUAAUAAQADAAAAAAAUAAYAAQADAAAAAAATAAYAAQADAAAAAAASAAYAAQADAAAAAAARAAYAAQADAAAAAAARAAcAAQADAAAAAAASAAcAAQADAAAAAAATAAcAAQADAAAAAAAUAAcAAQADAAAAAAAUAAgAAQADAAAAAAATAAgAAQADAAAAAAASAAgAAQADAAAAAAARAAgAAQADAAAAAAAXAAUAAQADAAAAAAAYAAUAAQADAAAAAAAYAAYAAQADAAAAAAAYAAcAAQADAAAAAAAYAAgAAQADAAAAAAAXAAgAAQADAAAAAAAXAAYAAQADAAAAAAAXAAcAAQADAAAAAAANAAUAAQABAAAAAAAPAAUAAQADAAAAAAAOAAUAAQABAAAAAAAPAAQAAQAAAAAAAAAQAAQAAQABAAAAAAARAAQAAQABAAAAAAASAAQAAQABAAAAAAATAAQAAQABAAAAAAAUAAQAAQACAAAAAAAXAAQAAQABAAAAAAAYAAQAAQACAAAAAAANAAoAAQADAAAAAAAOAAoAAQADAAAAAAAPAAoAAQADAAAAAAAQAAoAAQADAAAAAAANAAkAAQADAAAAAAAOAAkAAQADAAAAAAAPAAkAAQADAAAAAAAQAAkAAQADAAAAAAARAAkAAQADAAAAAAASAAkAAQADAAAAAAATAAkAAQADAAAAAAAUAAkAAQADAAAAAAARAAoAAQADAAAAAAASAAoAAQADAAAAAAATAAoAAQADAAAAAAAUAAoAAQADAAAAAAAXAAkAAQADAAAAAAAYAAkAAQADAAAAAAAXAAoAAQADAAAAAAAYAAoAAQADAAAAAAD6/wcAAQABAAAAAAD7/wcAAQABAAAAAAD8/wcAAQABAAAAAAD9/wcAAQABAAAAAAD+/wcAAQABAAAAAAD//wcAAQABAAAAAAAAAAcAAQABAAAAAAD5/wgAAQADAAAAAAD6/wgAAQADAAAAAAD7/wgAAQADAAAAAAD8/wgAAQADAAAAAAD9/wgAAQADAAAAAAD+/wgAAQADAAAAAAD//wgAAQADAAAAAAAAAAgAAQADAAAAAAAAAAkAAQADAAAAAAAAAAoAAQADAAAAAAD//woAAQADAAAAAAD+/woAAQADAAAAAAD9/woAAQADAAAAAAD8/woAAQADAAAAAAD7/woAAQADAAAAAAD6/woAAQADAAAAAAD6/wkAAQADAAAAAAD7/wkAAQADAAAAAAD8/wkAAQADAAAAAAD9/wkAAQADAAAAAAD+/wkAAQADAAAAAAD//wkAAQADAAAAAAD5/wkAAQADAAAAAAD5/woAAQADAAAAAAABAAYAAQABAAAAAAACAAYAAQADAAAAAAADAAYAAQADAAAAAAAEAAYAAQADAAAAAAAFAAYAAQADAAAAAAAGAAYAAQADAAAAAAAHAAYAAQADAAAAAAAIAAYAAQADAAAAAAAJAAYAAQADAAAAAAAKAAYAAQADAAAAAAAKAAcAAQADAAAAAAAJAAcAAQADAAAAAAAIAAcAAQADAAAAAAAHAAcAAQADAAAAAAAGAAcAAQADAAAAAAAFAAcAAQADAAAAAAAEAAcAAQADAAAAAAADAAcAAQADAAAAAAACAAcAAQADAAAAAAABAAcAAQADAAAAAAABAAgAAQADAAAAAAABAAkAAQADAAAAAAABAAoAAQADAAAAAAACAAoAAQADAAAAAAADAAoAAQADAAAAAAAEAAoAAQADAAAAAAAFAAoAAQADAAAAAAAGAAoAAQADAAAAAAAHAAoAAQADAAAAAAAIAAoAAQADAAAAAAAJAAoAAQADAAAAAAAKAAoAAQADAAAAAAAKAAkAAQADAAAAAAAKAAgAAQADAAAAAAAJAAgAAQADAAAAAAAIAAgAAQADAAAAAAAHAAgAAQADAAAAAAAGAAgAAQADAAAAAAAFAAgAAQADAAAAAAAEAAgAAQADAAAAAAADAAgAAQADAAAAAAACAAgAAQADAAAAAAACAAkAAQADAAAAAAADAAkAAQADAAAAAAAEAAkAAQADAAAAAAAFAAkAAQADAAAAAAAGAAkAAQADAAAAAAAHAAkAAQADAAAAAAAIAAkAAQADAAAAAAAJAAkAAQADAAAAAAAAAAYAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAAFAAUAAQABAAAAAAAGAAUAAQABAAAAAAAHAAUAAQABAAAAAAAIAAUAAQABAAAAAAAJAAUAAQABAAAAAAAKAAUAAQACAAAAAAD5/wcAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_8vxhi")
+
+[node name="platform" parent="." unique_id=175953230 instance=ExtResource("3_1marv")]
+position = Vector2(210, 552)
+scale = Vector2(0.40549105, 0.41401017)
+
+[node name="player" parent="." unique_id=366842889 instance=ExtResource("4_sgvlu")]
+position = Vector2(51, 670)
+scale = Vector2(0.6582339, 0.6127703)
+
+[node name="coin_score" parent="player" unique_id=1498130388 instance=ExtResource("6_vhp5f")]
+offset_left = -2522.8494
+offset_top = -1263.888
+offset_right = -2492.8494
+offset_bottom = -1190.888
+scale = Vector2(3.7500784, 2.616713)
+theme_override_font_sizes/font_size = 53
+
+[node name="health" parent="player" unique_id=1920023983 instance=ExtResource("6_xlef1")]
+
+[node name="keyDisplay" parent="player" unique_id=787666847 instance=ExtResource("15_kk6hu")]
+scale = Vector2(2.9098608, 2.7777755)
+transform = Transform2D(2.9098608, 0, 0, 2.7777755, 0, 0)
+
+[node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("15_kk6hu")]
+script = ExtResource("8_u2bxs")
+
+[node name="control" parent="player" unique_id=227835840 instance=ExtResource("9_e3naj")]
+z_index = 2
+position = Vector2(-1190.8223, -819.42035)
+scale = Vector2(1.0273122, 1.4057362)
+
+[node name="coin" parent="." unique_id=499694729 instance=ExtResource("5_32x67")]
+position = Vector2(268.00003, 528)
+scale = Vector2(0.36074698, 0.3238474)
+
+[node name="coin2" parent="." unique_id=222749583 instance=ExtResource("5_32x67")]
+position = Vector2(537.00006, 499)
+scale = Vector2(0.40000123, 0.35999998)
+
+[node name="coin3" parent="." unique_id=1308244586 instance=ExtResource("5_32x67")]
+position = Vector2(321, 528)
+scale = Vector2(0.36434126, -0.32521838)
+
+[node name="platform2" parent="." unique_id=1879947007 instance=ExtResource("3_1marv")]
+position = Vector2(432, 264.99997)
+scale = Vector2(0.46835366, 0.4848805)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform2" unique_id=255331262]
+libraries/ = SubResource("AnimationLibrary_k2dri")
+autoplay = &"upDown"
+
+[node name="coin4" parent="." unique_id=251083010 instance=ExtResource("5_32x67")]
+position = Vector2(556, 196)
+scale = Vector2(0.35734543, 0.35363573)
+
+[node name="enemyTeni" parent="." unique_id=1600189340 instance=ExtResource("10_k2dri")]
+position = Vector2(1387, 573)
+scale = Vector2(0.43982053, 0.37969613)
+
+[node name="teniAnime" type="AnimationPlayer" parent="enemyTeni" unique_id=1208622507]
+root_node = NodePath("../../platform3")
+libraries/ = SubResource("AnimationLibrary_ypo0x")
+autoplay = &"move"
+
+[node name="healthAddon" parent="." unique_id=1037928354 instance=ExtResource("11_mi3b7")]
+position = Vector2(839, 496)
+
+[node name="healthAddon2" parent="." unique_id=1516580361 instance=ExtResource("11_mi3b7")]
+position = Vector2(197, 622)
+
+[node name="startPoint" parent="." unique_id=1566252178 instance=ExtResource("13_ye7wa")]
+
+[node name="gamePaused" parent="." unique_id=1924133955 instance=ExtResource("12_5yrwr")]
+
+[node name="endDoor" parent="." unique_id=2012804697 instance=ExtResource("13_ab4ps")]
+z_index = -1
+position = Vector2(3001, 228)
+
+[node name="doorKey" parent="." unique_id=138178562 instance=ExtResource("14_u2bxs")]
+position = Vector2(2055, 427)
+
+[node name="platform3" parent="." unique_id=1566485177 instance=ExtResource("3_1marv")]
+position = Vector2(-382, 587)
+scale = Vector2(0.39999998, 0.3724601)
+
+[node name="plat3Ani" type="AnimationPlayer" parent="platform3" unique_id=441822591]
+libraries/ = SubResource("AnimationLibrary_m42xt")
+autoplay = &"move"
+
+[node name="pallrallaxBg" parent="." unique_id=529035039 instance=ExtResource("17_ypo0x")]
+
+[node name="deathZone2" parent="." unique_id=1618005237 instance=ExtResource("20_08ybn")]
+
+[node name="enemyBox" parent="." unique_id=715642427 instance=ExtResource("17_kk6hu")]
+position = Vector2(2342, 482.00003)
+scale = Vector2(0.44, 0.3642935)
+
+[node name="tree" type="TileMapLayer" parent="." unique_id=267160105]
+z_index = -1
+position = Vector2(0, -10)
+tile_map_data = PackedByteArray("AAAFAAAAAQAAAAAAAAD+/wEAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_s2eko")
+
+[node name="coin5" parent="." unique_id=1403064581 instance=ExtResource("5_32x67")]
+position = Vector2(-272, 561)
+scale = Vector2(0.5543617, 0.50509745)
+
+[node name="endpoint" parent="." unique_id=1744208476 instance=ExtResource("22_08ybn")]
+position = Vector2(3166, 404)
+
+[node name="bgMusic" parent="." unique_id=133999180 instance=ExtResource("23_m42xt")]

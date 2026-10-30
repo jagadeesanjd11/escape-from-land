@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bpwajsjof6kn"]
+
+[ext_resource type="Texture2D" uid="uid://cfge0me3m88nk" path="res://assets/Vector/Backgrounds/background_solid_sky.svg" id="1_sr3tw"]
+
+[node name="pallrallaxBg" type="CanvasLayer" unique_id=529035039]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1238978668]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground" unique_id=1370741825]
+scale = Vector2(1.491049, 1.8433455)
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-926, 158)
+repeat_size = Vector2(1920, 0)
+repeat_times = 15
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Parallax2D" unique_id=408898100]
+position = Vector2(866.504, 73.50763)
+scale = Vector2(8.315245, 14.746879)
+texture = ExtResource("1_sr3tw")
