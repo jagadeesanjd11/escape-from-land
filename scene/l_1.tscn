@@ -169,6 +169,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_14tts")
 
 [node name="L1" type="Node2D" unique_id=734086104]
+position = Vector2(-8, 9)
 script = ExtResource("1_x2tal")
 
 [node name="tiles" type="TileMapLayer" parent="." unique_id=1428926501]
@@ -181,8 +182,7 @@ position = Vector2(210, 552)
 scale = Vector2(0.40549105, 0.41401017)
 
 [node name="player" parent="." unique_id=366842889 instance=ExtResource("4_sgvlu")]
-position = Vector2(51, 670)
-scale = Vector2(0.6582339, 0.6127703)
+position = Vector2(69, 631)
 
 [node name="coin_score" parent="player" unique_id=1498130388 instance=ExtResource("6_vhp5f")]
 offset_left = -2522.8494
@@ -208,15 +208,12 @@ scale = Vector2(1.0273122, 1.4057362)
 
 [node name="coin" parent="." unique_id=499694729 instance=ExtResource("5_32x67")]
 position = Vector2(268.00003, 528)
-scale = Vector2(0.36074698, 0.3238474)
 
 [node name="coin2" parent="." unique_id=222749583 instance=ExtResource("5_32x67")]
 position = Vector2(537.00006, 499)
-scale = Vector2(0.40000123, 0.35999998)
 
 [node name="coin3" parent="." unique_id=1308244586 instance=ExtResource("5_32x67")]
 position = Vector2(321, 528)
-scale = Vector2(0.36434126, -0.32521838)
 
 [node name="platform2" parent="." unique_id=1879947007 instance=ExtResource("3_1marv")]
 position = Vector2(432, 264.99997)
@@ -228,11 +225,9 @@ autoplay = &"upDown"
 
 [node name="coin4" parent="." unique_id=251083010 instance=ExtResource("5_32x67")]
 position = Vector2(556, 196)
-scale = Vector2(0.35734543, 0.35363573)
 
 [node name="enemyTeni" parent="." unique_id=1600189340 instance=ExtResource("10_k2dri")]
 position = Vector2(1387, 573)
-scale = Vector2(0.43982053, 0.37969613)
 
 [node name="teniAnime" type="AnimationPlayer" parent="enemyTeni" unique_id=1208622507]
 root_node = NodePath("../../platform3")
@@ -240,7 +235,7 @@ libraries/ = SubResource("AnimationLibrary_ypo0x")
 autoplay = &"move"
 
 [node name="healthAddon" parent="." unique_id=1037928354 instance=ExtResource("11_mi3b7")]
-position = Vector2(839, 496)
+position = Vector2(790, 545)
 
 [node name="healthAddon2" parent="." unique_id=1516580361 instance=ExtResource("11_mi3b7")]
 position = Vector2(197, 622)
@@ -269,8 +264,7 @@ autoplay = &"move"
 [node name="deathZone2" parent="." unique_id=1618005237 instance=ExtResource("20_08ybn")]
 
 [node name="enemyBox" parent="." unique_id=715642427 instance=ExtResource("17_kk6hu")]
-position = Vector2(2342, 482.00003)
-scale = Vector2(0.44, 0.3642935)
+position = Vector2(2302, 450)
 
 [node name="tree" type="TileMapLayer" parent="." unique_id=267160105]
 z_index = -1
@@ -280,7 +274,6 @@ tile_set = SubResource("TileSet_s2eko")
 
 [node name="coin5" parent="." unique_id=1403064581 instance=ExtResource("5_32x67")]
 position = Vector2(-272, 561)
-scale = Vector2(0.5543617, 0.50509745)
 
 [node name="endpoint" parent="." unique_id=1744208476 instance=ExtResource("22_08ybn")]
 position = Vector2(3166, 404)
