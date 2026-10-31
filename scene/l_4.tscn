@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://uw0o6ovrymhm" path="res://scene/player.tscn" id="2_13m1y"]
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="3_5qome"]
 [ext_resource type="PackedScene" uid="uid://cxlvbqipawaqg" path="res://scene/health.tscn" id="4_sb0l6"]
+[ext_resource type="PackedScene" uid="uid://dppfptebgmp7r" path="res://scene/display_coin.tscn" id="5_1pe3v"]
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="5_1yhvw"]
-[ext_resource type="PackedScene" uid="uid://db66vvt2m6g7x" path="res://scene/coin_score.tscn" id="5_25n1u"]
 [ext_resource type="Texture2D" uid="uid://c6pn0otcw32mi" path="res://assets/ground.png" id="6_13m1y"]
 [ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="8_sb0l6"]
 [ext_resource type="PackedScene" uid="uid://ccdx7q4lu4qof" path="res://scene/death_zone_2.tscn" id="9_1yhvw"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://co23em1jdyk3r" path="res://scene/door_key.tscn" id="17_tq2gh"]
 [ext_resource type="PackedScene" uid="uid://cfxwoxeiu4wsp" path="res://scene/end_door.tscn" id="18_kqhqg"]
 [ext_resource type="Texture2D" uid="uid://blohdifbda5ff" path="res://assets/tree.png" id="19_kqhqg"]
+[ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="20_1pe3v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qome"]
 texture = ExtResource("6_13m1y")
@@ -1776,13 +1777,10 @@ position = Vector2(-44, 86)
 [node name="player" parent="." unique_id=366842889 instance=ExtResource("2_13m1y")]
 position = Vector2(969, 538)
 
-[node name="Label2" parent="player" unique_id=1426805919 instance=ExtResource("5_25n1u")]
-offset_left = -874.0
-offset_top = -466.0
-offset_right = -857.0
-offset_bottom = -416.76
+[node name="displayCoin" parent="player" unique_id=643231603 instance=ExtResource("5_1pe3v")]
 
 [node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("3_5qome")]
+script = ExtResource("20_1pe3v")
 
 [node name="health" parent="player" unique_id=1920023983 instance=ExtResource("4_sb0l6")]
 

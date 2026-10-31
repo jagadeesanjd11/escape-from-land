@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="4_eorcc"]
 [ext_resource type="PackedScene" uid="uid://b81sk8qdolmm8" path="res://scene/enemyTeni.tscn" id="5_mw7fw"]
 [ext_resource type="PackedScene" uid="uid://cxlvbqipawaqg" path="res://scene/health.tscn" id="6_ciovm"]
+[ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="7_d7stb"]
 [ext_resource type="PackedScene" uid="uid://havttcdynfwt" path="res://scene/health_addon.tscn" id="7_pm1xu"]
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="8_qc4dy"]
-[ext_resource type="PackedScene" uid="uid://db66vvt2m6g7x" path="res://scene/coin_score.tscn" id="9_a4a23"]
 [ext_resource type="PackedScene" uid="uid://r0ituhten61u" path="res://scene/coin.tscn" id="10_5288a"]
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="11_fp0vn"]
 [ext_resource type="PackedScene" uid="uid://bke5i802mc52t" path="res://scene/start_point.tscn" id="12_pm1xu"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cxmnfoi3ofwr6" path="res://scene/endpoint.tscn" id="19_jgrdc"]
 [ext_resource type="Texture2D" uid="uid://blohdifbda5ff" path="res://assets/tree.png" id="20_5mxln"]
 [ext_resource type="PackedScene" uid="uid://ccdx7q4lu4qof" path="res://scene/death_zone_2.tscn" id="20_d7stb"]
+[ext_resource type="PackedScene" uid="uid://dppfptebgmp7r" path="res://scene/display_coin.tscn" id="21_d7stb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eorcc"]
 texture = ExtResource("2_sobne")
@@ -1514,14 +1515,9 @@ position = Vector2(199, 369)
 position = Vector2(-947.00006, -528)
 
 [node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("8_qc4dy")]
+script = ExtResource("7_d7stb")
 
 [node name="health" parent="player" unique_id=1920023983 instance=ExtResource("6_ciovm")]
-
-[node name="Label" parent="player" unique_id=1426805919 instance=ExtResource("9_a4a23")]
-offset_left = -834.0
-offset_top = -460.0
-offset_right = -817.0
-offset_bottom = -410.76
 
 [node name="pallrallaxBg" parent="." unique_id=529035039 instance=ExtResource("4_eorcc")]
 
@@ -1584,3 +1580,5 @@ tile_set = SubResource("TileSet_s2eko")
 
 [node name="deathZone2" parent="." unique_id=1618005237 instance=ExtResource("20_d7stb")]
 position = Vector2(102, -289)
+
+[node name="displayCoin" parent="." unique_id=643231603 instance=ExtResource("21_d7stb")]

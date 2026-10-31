@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dppfptebgmp7r"]
+
+[ext_resource type="FontFile" uid="uid://dqjorj1otiub5" path="res://assets/fonts/MotionControl-Bold.otf" id="1_746ti"]
+[ext_resource type="Script" uid="uid://dbkmovwsbejd5" path="res://scripts/coin_score.gd" id="2_4grpd"]
+[ext_resource type="Texture2D" uid="uid://cbrf6o2ewjngy" path="res://assets/Vector/Tiles/coin_gold.svg" id="2_s5hya"]
+
+[node name="displayCoin" type="CanvasLayer" unique_id=643231603]
+metadata/_edit_horizontal_guides_ = [32.0, 167.0, 192.0]
+metadata/_edit_vertical_guides_ = [99.0, 90.0]
+
+[node name="Label" type="Label" parent="." unique_id=1895088846]
+offset_left = 226.0
+offset_top = 210.0
+offset_right = 279.88885
+offset_bottom = 286.0
+theme_override_colors/font_color = Color(0.7921569, 0.45490196, 0.12941177, 1)
+theme_override_fonts/font = ExtResource("1_746ti")
+theme_override_font_sizes/font_size = 75
+text = "0"
+script = ExtResource("2_4grpd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402229411]
+position = Vector2(146, 252)
+scale = Vector2(-2.875985, -2.0124006)
+texture = ExtResource("2_s5hya")

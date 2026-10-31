@@ -19,9 +19,9 @@ func _ready() -> void:
 	save_game_data("res://scene/l_"+ str(Coman.game_level)+ ".tscn", Coman.game_level, Coman.overAllCoin)
 	
 func _on_nxt_btn_pressed() -> void:
-	Coman.resetAll()
 	print("res://scene/l_" + str(Coman.game_level) + ".tscn")
 	get_tree().change_scene_to_file("res://scene/l_" + str(Coman.game_level) + ".tscn")
-
+	Coman.resetAll()
+	print(Coman.keyCollected)
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/menu.tscn")

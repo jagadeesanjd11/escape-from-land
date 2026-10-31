@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://c6pn0otcw32mi" path="res://assets/ground.png" id="3_u5k27"]
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="4_u5k27"]
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="5_f1hgn"]
-[ext_resource type="PackedScene" uid="uid://db66vvt2m6g7x" path="res://scene/coin_score.tscn" id="6_gqn5m"]
 [ext_resource type="PackedScene" uid="uid://ccdx7q4lu4qof" path="res://scene/death_zone_2.tscn" id="7_egwf5"]
+[ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="7_i51ae"]
+[ext_resource type="PackedScene" uid="uid://dppfptebgmp7r" path="res://scene/display_coin.tscn" id="9_i51ae"]
 [ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="9_u5k27"]
 [ext_resource type="PackedScene" uid="uid://bvx83ehcpbdds" path="res://scene/platform.tscn" id="11_f1hgn"]
 [ext_resource type="PackedScene" uid="uid://co23em1jdyk3r" path="res://scene/door_key.tscn" id="12_f5mib"]
@@ -1765,15 +1766,12 @@ position = Vector2(961, 543)
 [node name="health" parent="player" unique_id=1920023983 instance=ExtResource("3_3iwjs")]
 
 [node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("4_u5k27")]
+script = ExtResource("7_i51ae")
 
 [node name="control" parent="player" unique_id=227835840 instance=ExtResource("5_f1hgn")]
 position = Vector2(-950, -517)
 
-[node name="Label" parent="player" unique_id=1426805919 instance=ExtResource("6_gqn5m")]
-offset_left = -878.0
-offset_top = -464.0
-offset_right = -861.0
-offset_bottom = -414.76
+[node name="displayCoin" parent="player" unique_id=643231603 instance=ExtResource("9_i51ae")]
 
 [node name="deathZone2" parent="." unique_id=1618005237 instance=ExtResource("7_egwf5")]
 position = Vector2(-9, -14)

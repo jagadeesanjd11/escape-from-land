@@ -22,4 +22,4 @@ shape = SubResource("CapsuleShape2D_8vxhi")
 [node name="soundKey" type="AudioStreamPlayer2D" parent="." unique_id=509024480]
 stream = ExtResource("2_j4lpk")
 
-[connection signal="body_exited" from="keyArea" to="." method="_on_key_area_body_exited"]
+[connection signal="body_entered" from="keyArea" to="." method="_on_key_area_body_entered"]

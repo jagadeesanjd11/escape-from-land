@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="3_w018g"]
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="4_t5tno"]
 [ext_resource type="PackedScene" uid="uid://cxlvbqipawaqg" path="res://scene/health.tscn" id="5_lynp3"]
-[ext_resource type="PackedScene" uid="uid://db66vvt2m6g7x" path="res://scene/coin_score.tscn" id="6_6gper"]
+[ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="6_rxy3r"]
 [ext_resource type="Texture2D" uid="uid://c6pn0otcw32mi" path="res://assets/ground.png" id="8_lynp3"]
 [ext_resource type="PackedScene" uid="uid://r6oh7b835sgi" path="res://scene/teni_2_0.tscn" id="9_6gper"]
+[ext_resource type="PackedScene" uid="uid://dppfptebgmp7r" path="res://scene/display_coin.tscn" id="9_rxy3r"]
 [ext_resource type="PackedScene" uid="uid://hgekmo6xsuen" path="res://scene/flay_2_0.tscn" id="10_ntef6"]
 [ext_resource type="PackedScene" uid="uid://o7k2afo0h6kd" path="res://scene/stop_area_enemy.tscn" id="11_33j3p"]
 [ext_resource type="PackedScene" uid="uid://co23em1jdyk3r" path="res://scene/door_key.tscn" id="12_33j3p"]
@@ -1623,17 +1624,14 @@ tile_set = SubResource("TileSet_8vxhi")
 position = Vector2(957, 542)
 
 [node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("3_w018g")]
+script = ExtResource("6_rxy3r")
 
 [node name="control" parent="player" unique_id=227835840 instance=ExtResource("4_t5tno")]
 position = Vector2(-956, -534.00006)
 
 [node name="health" parent="player" unique_id=1920023983 instance=ExtResource("5_lynp3")]
 
-[node name="Label" parent="player" unique_id=1426805919 instance=ExtResource("6_6gper")]
-offset_left = -884.0
-offset_top = -495.0
-offset_right = -867.0
-offset_bottom = -445.76
+[node name="displayCoin" parent="player" unique_id=643231603 instance=ExtResource("9_rxy3r")]
 
 [node name="teni2_0" parent="." unique_id=124431 instance=ExtResource("9_6gper")]
 position = Vector2(147, 605)

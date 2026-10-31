@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://uw0o6ovrymhm" path="res://scene/player.tscn" id="2_bcn7i"]
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="3_5o5lb"]
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="4_ispob"]
+[ext_resource type="PackedScene" uid="uid://dppfptebgmp7r" path="res://scene/display_coin.tscn" id="4_tss1g"]
 [ext_resource type="PackedScene" uid="uid://cxlvbqipawaqg" path="res://scene/health.tscn" id="5_2o8p5"]
-[ext_resource type="PackedScene" uid="uid://db66vvt2m6g7x" path="res://scene/coin_score.tscn" id="6_l2qky"]
+[ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="6_tss1g"]
 [ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="8_ispob"]
 [ext_resource type="PackedScene" uid="uid://cxmnfoi3ofwr6" path="res://scene/endpoint.tscn" id="8_p2vnb"]
 [ext_resource type="PackedScene" uid="uid://r6oh7b835sgi" path="res://scene/teni_2_0.tscn" id="9_2o8p5"]
@@ -1469,18 +1470,15 @@ tile_set = SubResource("TileSet_iwj73")
 [node name="player" parent="." unique_id=366842889 instance=ExtResource("2_bcn7i")]
 position = Vector2(1244, 527)
 
+[node name="displayCoin" parent="player" unique_id=643231603 instance=ExtResource("4_tss1g")]
+
 [node name="control" parent="player" unique_id=227835840 instance=ExtResource("3_5o5lb")]
 position = Vector2(-996, -474)
 
 [node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("4_ispob")]
+script = ExtResource("6_tss1g")
 
 [node name="health" parent="player" unique_id=1920023983 instance=ExtResource("5_2o8p5")]
-
-[node name="Label" parent="player" unique_id=1426805919 instance=ExtResource("6_l2qky")]
-offset_left = -865.0
-offset_top = -474.0
-offset_right = -848.0
-offset_bottom = -424.76
 
 [node name="endpoint" parent="player" unique_id=1744208476 instance=ExtResource("8_p2vnb")]
 position = Vector2(6544, -164)

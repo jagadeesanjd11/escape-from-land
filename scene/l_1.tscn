@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bvx83ehcpbdds" path="res://scene/platform.tscn" id="3_1marv"]
 [ext_resource type="PackedScene" uid="uid://uw0o6ovrymhm" path="res://scene/player.tscn" id="4_sgvlu"]
 [ext_resource type="PackedScene" uid="uid://r0ituhten61u" path="res://scene/coin.tscn" id="5_32x67"]
-[ext_resource type="PackedScene" uid="uid://db66vvt2m6g7x" path="res://scene/coin_score.tscn" id="6_vhp5f"]
+[ext_resource type="PackedScene" uid="uid://dppfptebgmp7r" path="res://scene/display_coin.tscn" id="6_m42xt"]
 [ext_resource type="PackedScene" uid="uid://cxlvbqipawaqg" path="res://scene/health.tscn" id="6_xlef1"]
 [ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="8_u2bxs"]
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="9_e3naj"]
@@ -184,27 +184,19 @@ scale = Vector2(0.40549105, 0.41401017)
 [node name="player" parent="." unique_id=366842889 instance=ExtResource("4_sgvlu")]
 position = Vector2(69, 631)
 
-[node name="coin_score" parent="player" unique_id=1498130388 instance=ExtResource("6_vhp5f")]
-offset_left = -2522.8494
-offset_top = -1263.888
-offset_right = -2492.8494
-offset_bottom = -1190.888
-scale = Vector2(3.7500784, 2.616713)
-theme_override_font_sizes/font_size = 53
+[node name="displayCoin" parent="player" unique_id=643231603 instance=ExtResource("6_m42xt")]
 
 [node name="health" parent="player" unique_id=1920023983 instance=ExtResource("6_xlef1")]
-
-[node name="keyDisplay" parent="player" unique_id=787666847 instance=ExtResource("15_kk6hu")]
-scale = Vector2(2.9098608, 2.7777755)
-transform = Transform2D(2.9098608, 0, 0, 2.7777755, 0, 0)
-
-[node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("15_kk6hu")]
-script = ExtResource("8_u2bxs")
 
 [node name="control" parent="player" unique_id=227835840 instance=ExtResource("9_e3naj")]
 z_index = 2
 position = Vector2(-960, -515)
 scale = Vector2(0.8164267, 0.9022038)
+
+[node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("15_kk6hu")]
+script = ExtResource("8_u2bxs")
+
+[node name="gamePaused" parent="player" unique_id=1924133955 instance=ExtResource("12_5yrwr")]
 
 [node name="coin" parent="." unique_id=499694729 instance=ExtResource("5_32x67")]
 position = Vector2(268.00003, 528)
@@ -241,8 +233,6 @@ position = Vector2(790, 545)
 position = Vector2(197, 622)
 
 [node name="startPoint" parent="." unique_id=1566252178 instance=ExtResource("13_ye7wa")]
-
-[node name="gamePaused" parent="." unique_id=1924133955 instance=ExtResource("12_5yrwr")]
 
 [node name="endDoor" parent="." unique_id=2012804697 instance=ExtResource("13_ab4ps")]
 z_index = -1

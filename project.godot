@@ -12,7 +12,6 @@ config_version=5
 
 config/name="T32FullGame"
 run/main_scene="uid://igyogyg8n8yf"
-config/quit_on_go_back=false
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://de6mxilcp0s5m"

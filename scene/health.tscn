@@ -1,26 +1,29 @@
 [gd_scene format=3 uid="uid://cxlvbqipawaqg"]
 
 [ext_resource type="Texture2D" uid="uid://du3fyh2e0xswy" path="res://assets/Vector/Tiles/heart.svg" id="1_ki7ji"]
+[ext_resource type="FontFile" uid="uid://dqjorj1otiub5" path="res://assets/fonts/MotionControl-Bold.otf" id="2_3ewot"]
 [ext_resource type="Script" uid="uid://nnbk250gtnk2" path="res://scripts/label.gd" id="2_ifnqg"]
 
 [node name="health" type="CanvasLayer" unique_id=1920023983]
+metadata/_edit_horizontal_guides_ = [190.0]
+metadata/_edit_vertical_guides_ = [90.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1988859892]
-position = Vector2(1612, 82)
-scale = Vector2(1.296875, 1.46875)
+position = Vector2(134.00002, 121.00001)
+scale = Vector2(2.5065634, 2.9231257)
 texture = ExtResource("1_ki7ji")
 
 [node name="Label" type="Label" parent="." unique_id=950305391]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -273.0
-offset_top = 48.0
-offset_right = -234.36377
-offset_bottom = 93.0
+offset_left = -1724.0
+offset_top = 83.0
+offset_right = -1660.0
+offset_bottom = 159.0
 grow_horizontal = 0
-scale = Vector2(1.3199987, 1.3784615)
-theme_override_colors/font_color = Color(0.914345, 0.76291096, 0.3232033, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.7921569, 0.45490196, 0.12941177, 1)
+theme_override_fonts/font = ExtResource("2_3ewot")
+theme_override_font_sizes/font_size = 75
 text = "10"
 script = ExtResource("2_ifnqg")

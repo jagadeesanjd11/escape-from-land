@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="3_t8p2n"]
 [ext_resource type="PackedScene" uid="uid://uw0o6ovrymhm" path="res://scene/player.tscn" id="4_4kdsy"]
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="5_klqh6"]
+[ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="5_x3oxt"]
 [ext_resource type="PackedScene" uid="uid://cxlvbqipawaqg" path="res://scene/health.tscn" id="6_ac6t1"]
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="7_ifbqq"]
-[ext_resource type="PackedScene" uid="uid://db66vvt2m6g7x" path="res://scene/coin_score.tscn" id="8_8vfxr"]
+[ext_resource type="PackedScene" uid="uid://dppfptebgmp7r" path="res://scene/display_coin.tscn" id="7_x3oxt"]
 [ext_resource type="Texture2D" uid="uid://c6pn0otcw32mi" path="res://assets/ground.png" id="9_bjrds"]
 [ext_resource type="PackedScene" uid="uid://cfxwoxeiu4wsp" path="res://scene/end_door.tscn" id="10_t8p2n"]
 [ext_resource type="PackedScene" uid="uid://bvx83ehcpbdds" path="res://scene/platform.tscn" id="11_4kdsy"]
@@ -1682,18 +1683,15 @@ tile_set = SubResource("TileSet_8vxhi")
 position = Vector2(951, 547)
 
 [node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("5_klqh6")]
+script = ExtResource("5_x3oxt")
 
 [node name="health" parent="player" unique_id=1920023983 instance=ExtResource("6_ac6t1")]
+
+[node name="displayCoin" parent="player" unique_id=643231603 instance=ExtResource("7_x3oxt")]
 
 [node name="control" parent="player" unique_id=227835840 instance=ExtResource("7_ifbqq")]
 z_index = 2
 position = Vector2(-960.00006, -541.99994)
-
-[node name="Label" parent="player" unique_id=1426805919 instance=ExtResource("8_8vfxr")]
-offset_left = -843.0
-offset_top = -450.0
-offset_right = -826.0
-offset_bottom = -400.76
 
 [node name="bgMusic" parent="." unique_id=133999180 instance=ExtResource("2_bjrds")]
 position = Vector2(-78, 53)
