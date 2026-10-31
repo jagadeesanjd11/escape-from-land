@@ -203,8 +203,8 @@ script = ExtResource("8_u2bxs")
 
 [node name="control" parent="player" unique_id=227835840 instance=ExtResource("9_e3naj")]
 z_index = 2
-position = Vector2(-1190.8223, -819.42035)
-scale = Vector2(1.0273122, 1.4057362)
+position = Vector2(-960, -515)
+scale = Vector2(0.8164267, 0.9022038)
 
 [node name="coin" parent="." unique_id=499694729 instance=ExtResource("5_32x67")]
 position = Vector2(268.00003, 528)
