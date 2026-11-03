@@ -5,12 +5,13 @@ var gamePaused: bool = false
 var keyCollected: bool = false
 var game_level:int = 1
 var overAllCoin:int = 0
-
+var landStable:bool = true
 func resetAll():
 	coinCount = 0
 	healthCount = 10
 	gamePaused = false
 	keyCollected = false
+	landStable = true
 	
 func hurt(body,sound):
 	if body.name == "player":

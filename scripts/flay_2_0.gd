@@ -8,11 +8,13 @@ extends CharacterBody2D
 var follow:bool = true
 var time_passed: float = 0.0
 var wait_time: float = 2 # Wait for 2 seconds
+
 func _ready() -> void:
 	flayAni2_0.flip_h = true
 	flayAni2_0.play("default")
-
-
+	if Coman.game_level == 9:
+		move_speed = 325	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if follow == true:
@@ -42,6 +44,6 @@ func _on_flay_area_2_0_body_exited(body: Node2D) -> void:
 
 func _on_stop_area_enemy_body_exited(body: Node2D) -> void:
 	print("body faly", body.name)
-	if body.name == "flay_2_0" ||  body.name == "flay_2_1":
+	if body.name == "flay_2_0" ||  body.name == "flay_2_1" || body.name == "flay_2_2":
 		follow = false
 		flayAni2_0.flip_h = false

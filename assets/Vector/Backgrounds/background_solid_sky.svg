@@ -1,6 +1,46 @@
-<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs/>
-  <g>
-    <path stroke="none" fill="#C3E3FF" d="M0 0 L256 0 256 256 0 256 0 0"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="256"
+   height="256"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="background_solid_sky.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.0195312"
+     inkscape:cx="127.75242"
+     inkscape:cy="128.24758"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <defs
+     id="defs2" />
+  <g
+     id="g6">
+    <path
+       stroke="none"
+       fill="#C3E3FF"
+       d="M0 0 L256 0 256 256 0 256 0 0"
+       id="path4" />
   </g>
+  <path
+     style="fill:#8ecfe4;stroke-width:0.495944;fill-opacity:1"
+     d="M 0,128 V 0.24758221 H 128 256 V 128 255.75242 H 128 0 Z"
+     id="path864" />
 </svg>

@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bsqhdbkbqbxib" path="res://scripts/death_zone_2.gd" id="1_y42gv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2bxs"]
-size = Vector2(44360, 470)
+size = Vector2(57714, 470)
 
 [node name="deathZone2" type="Area2D" unique_id=1618005237]
 script = ExtResource("1_y42gv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=234513688]
-position = Vector2(-1274, 1644)
+position = Vector2(5403, 1644)
 shape = SubResource("RectangleShape2D_u2bxs")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

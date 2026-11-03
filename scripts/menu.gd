@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var playBtn = $playBtn
 const SAVE_PATH = "user://save_data.json"
 var data = {}
+var endLavel:int = 9
 # Called when the node enters the scene tree for the first time.
 func load_game_data() -> Dictionary:
 	if not FileAccess.file_exists(SAVE_PATH):
@@ -18,13 +19,17 @@ func load_game_data() -> Dictionary:
 
 func _ready() -> void:
 	data = load_game_data()
-	Coman.game_level = data.l_no
-	Coman.overAllCoin = data.coins
 	if data.l_no == 1 :
 		playBtn.text = "Play"
+	elif data.l_no > endLavel:
+		playBtn.text = "Play again"
+		data.current_level = "res://scene/l_1.tscn"
+		data.l_no = 1
+		data.coins = 0
 	else:
 		playBtn.text = "Continue"
-
+	Coman.game_level = data.l_no
+	Coman.overAllCoin = data.coins
 func _on_play_btn_pressed() -> void:
 	Coman.resetAll()
 	get_tree().change_scene_to_file(data.current_level)
@@ -32,3 +37,4 @@ func _on_play_btn_pressed() -> void:
 
 func _on_exit_btn_pressed() -> void:
 	get_tree().quit()
+	

@@ -1,7 +1,9 @@
 extends Node2D
-
+@onready var nxtBtn = $CanvasLayer/nxtBtn
 const SAVE_PATH = "user://save_data.json"
 @onready var winSound = $CanvasLayer/winSound
+var endLevel = 9
+@onready var label:Label = $CanvasLayer/won
 func save_game_data(level_name: String,l_no:int, coins:int) -> void:
 	var data = {
 		"current_level": level_name,
@@ -13,15 +15,22 @@ func save_game_data(level_name: String,l_no:int, coins:int) -> void:
 	file.store_line(json_string)
 
 func _ready() -> void:
+	print("Coman.game_level ", Coman.game_level)
+	if Coman.game_level >= endLevel:
+		nxtBtn.text = "Play again"
+		label.text = "The End"
+	else:
+		Coman.game_level += 1
+		Coman.overAllCoin += Coman.coinCount 
+		save_game_data("res://scene/l_"+ str(Coman.game_level)+ ".tscn", Coman.game_level, Coman.overAllCoin)
 	winSound.play()
-	Coman.game_level += 1
-	Coman.overAllCoin += Coman.coinCount 
-	save_game_data("res://scene/l_"+ str(Coman.game_level)+ ".tscn", Coman.game_level, Coman.overAllCoin)
-	
 func _on_nxt_btn_pressed() -> void:
-	print("res://scene/l_" + str(Coman.game_level) + ".tscn")
-	get_tree().change_scene_to_file("res://scene/l_" + str(Coman.game_level) + ".tscn")
-	Coman.resetAll()
-	print(Coman.keyCollected)
+	if Coman.game_level >= endLevel:
+		Coman.game_level = 1
+		Coman.overAllCoin = 0
+		save_game_data("res://scene/l_"+ str(Coman.game_level)+ ".tscn", Coman.game_level, Coman.overAllCoin)
+	else:
+		get_tree().change_scene_to_file("res://scene/l_" + str(Coman.game_level) + ".tscn")
+		Coman.resetAll()
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/menu.tscn")

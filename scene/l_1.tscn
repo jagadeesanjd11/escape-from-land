@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bgt31bh0uyr53" path="res://scripts/l_1.gd" id="1_x2tal"]
 [ext_resource type="Texture2D" uid="uid://c6pn0otcw32mi" path="res://assets/ground.png" id="2_e3naj"]
-[ext_resource type="PackedScene" uid="uid://bvx83ehcpbdds" path="res://scene/platform.tscn" id="3_1marv"]
 [ext_resource type="PackedScene" uid="uid://uw0o6ovrymhm" path="res://scene/player.tscn" id="4_sgvlu"]
 [ext_resource type="PackedScene" uid="uid://r0ituhten61u" path="res://scene/coin.tscn" id="5_32x67"]
+[ext_resource type="PackedScene" uid="uid://dtixf2s3i4gj6" path="res://scene/cloud.tscn" id="5_m42xt"]
 [ext_resource type="PackedScene" uid="uid://dppfptebgmp7r" path="res://scene/display_coin.tscn" id="6_m42xt"]
 [ext_resource type="PackedScene" uid="uid://cxlvbqipawaqg" path="res://scene/health.tscn" id="6_xlef1"]
 [ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="8_u2bxs"]
@@ -18,10 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="15_kk6hu"]
 [ext_resource type="PackedScene" uid="uid://bscy55m1wymbr" path="res://scene/enemy_box.tscn" id="17_kk6hu"]
 [ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="17_ypo0x"]
-[ext_resource type="Texture2D" uid="uid://blohdifbda5ff" path="res://assets/tree.png" id="19_ypo0x"]
 [ext_resource type="PackedScene" uid="uid://ccdx7q4lu4qof" path="res://scene/death_zone_2.tscn" id="20_08ybn"]
 [ext_resource type="PackedScene" uid="uid://cxmnfoi3ofwr6" path="res://scene/endpoint.tscn" id="22_08ybn"]
 [ext_resource type="PackedScene" uid="uid://b47v56moeorde" path="res://scene/bg_music.tscn" id="23_m42xt"]
+[ext_resource type="PackedScene" uid="uid://cdc20w1h3hon" path="res://scene/tree_anime_2.tscn" id="24_7n1j6"]
+[ext_resource type="PackedScene" uid="uid://bf72wkb24nfws" path="res://scene/tree_ani.tscn" id="24_60ld6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypo0x"]
 texture = ExtResource("2_e3naj")
@@ -40,44 +41,6 @@ texture_region_size = Vector2i(150, 150)
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ypo0x")
-
-[sub_resource type="Animation" id="Animation_6lq1s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(432, 264.99997)]
-}
-
-[sub_resource type="Animation" id="Animation_xlef1"]
-resource_name = "upDown"
-length = 3.0000000000000004
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(432, 264.99997), Vector2(473.00003, 551)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k2dri"]
-_data = {
-&"RESET": SubResource("Animation_6lq1s"),
-&"upDown": SubResource("Animation_xlef1")
-}
 
 [sub_resource type="Animation" id="Animation_kk6hu"]
 length = 0.001
@@ -117,57 +80,6 @@ _data = {
 &"move": SubResource("Animation_e3naj")
 }
 
-[sub_resource type="Animation" id="Animation_ye7wa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-382, 587)]
-}
-
-[sub_resource type="Animation" id="Animation_08ybn"]
-resource_name = "move"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-382, 587), Vector2(-390, 792)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m42xt"]
-_data = {
-&"RESET": SubResource("Animation_ye7wa"),
-&"move": SubResource("Animation_08ybn")
-}
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14tts"]
-texture = ExtResource("19_ypo0x")
-separation = Vector2i(2, 2)
-texture_region_size = Vector2i(408, 508)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_s2eko"]
-tile_size = Vector2i(408, 508)
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_14tts")
-
 [node name="L1" type="Node2D" unique_id=734086104]
 position = Vector2(-8, 9)
 script = ExtResource("1_x2tal")
@@ -177,9 +89,8 @@ position = Vector2(0, -5)
 tile_map_data = PackedByteArray("AAANAAgAAQADAAAAAAANAAcAAQADAAAAAAANAAYAAQADAAAAAAAOAAYAAQADAAAAAAAPAAYAAQADAAAAAAAOAAcAAQADAAAAAAAPAAcAAQADAAAAAAAPAAgAAQADAAAAAAAOAAgAAQADAAAAAAAQAAgAAQADAAAAAAAQAAcAAQADAAAAAAAQAAYAAQADAAAAAAAQAAUAAQADAAAAAAARAAUAAQADAAAAAAASAAUAAQADAAAAAAATAAUAAQADAAAAAAAUAAUAAQADAAAAAAAUAAYAAQADAAAAAAATAAYAAQADAAAAAAASAAYAAQADAAAAAAARAAYAAQADAAAAAAARAAcAAQADAAAAAAASAAcAAQADAAAAAAATAAcAAQADAAAAAAAUAAcAAQADAAAAAAAUAAgAAQADAAAAAAATAAgAAQADAAAAAAASAAgAAQADAAAAAAARAAgAAQADAAAAAAAXAAUAAQADAAAAAAAYAAUAAQADAAAAAAAYAAYAAQADAAAAAAAYAAcAAQADAAAAAAAYAAgAAQADAAAAAAAXAAgAAQADAAAAAAAXAAYAAQADAAAAAAAXAAcAAQADAAAAAAANAAUAAQABAAAAAAAPAAUAAQADAAAAAAAOAAUAAQABAAAAAAAPAAQAAQAAAAAAAAAQAAQAAQABAAAAAAARAAQAAQABAAAAAAASAAQAAQABAAAAAAATAAQAAQABAAAAAAAUAAQAAQACAAAAAAAXAAQAAQABAAAAAAAYAAQAAQACAAAAAAANAAoAAQADAAAAAAAOAAoAAQADAAAAAAAPAAoAAQADAAAAAAAQAAoAAQADAAAAAAANAAkAAQADAAAAAAAOAAkAAQADAAAAAAAPAAkAAQADAAAAAAAQAAkAAQADAAAAAAARAAkAAQADAAAAAAASAAkAAQADAAAAAAATAAkAAQADAAAAAAAUAAkAAQADAAAAAAARAAoAAQADAAAAAAASAAoAAQADAAAAAAATAAoAAQADAAAAAAAUAAoAAQADAAAAAAAXAAkAAQADAAAAAAAYAAkAAQADAAAAAAAXAAoAAQADAAAAAAAYAAoAAQADAAAAAAD6/wcAAQABAAAAAAD7/wcAAQABAAAAAAD8/wcAAQABAAAAAAD9/wcAAQABAAAAAAD+/wcAAQABAAAAAAD//wcAAQABAAAAAAAAAAcAAQABAAAAAAD5/wgAAQADAAAAAAD6/wgAAQADAAAAAAD7/wgAAQADAAAAAAD8/wgAAQADAAAAAAD9/wgAAQADAAAAAAD+/wgAAQADAAAAAAD//wgAAQADAAAAAAAAAAgAAQADAAAAAAAAAAkAAQADAAAAAAAAAAoAAQADAAAAAAD//woAAQADAAAAAAD+/woAAQADAAAAAAD9/woAAQADAAAAAAD8/woAAQADAAAAAAD7/woAAQADAAAAAAD6/woAAQADAAAAAAD6/wkAAQADAAAAAAD7/wkAAQADAAAAAAD8/wkAAQADAAAAAAD9/wkAAQADAAAAAAD+/wkAAQADAAAAAAD//wkAAQADAAAAAAD5/wkAAQADAAAAAAD5/woAAQADAAAAAAABAAYAAQABAAAAAAACAAYAAQADAAAAAAADAAYAAQADAAAAAAAEAAYAAQADAAAAAAAFAAYAAQADAAAAAAAGAAYAAQADAAAAAAAHAAYAAQADAAAAAAAIAAYAAQADAAAAAAAJAAYAAQADAAAAAAAKAAYAAQADAAAAAAAKAAcAAQADAAAAAAAJAAcAAQADAAAAAAAIAAcAAQADAAAAAAAHAAcAAQADAAAAAAAGAAcAAQADAAAAAAAFAAcAAQADAAAAAAAEAAcAAQADAAAAAAADAAcAAQADAAAAAAACAAcAAQADAAAAAAABAAcAAQADAAAAAAABAAgAAQADAAAAAAABAAkAAQADAAAAAAABAAoAAQADAAAAAAACAAoAAQADAAAAAAADAAoAAQADAAAAAAAEAAoAAQADAAAAAAAFAAoAAQADAAAAAAAGAAoAAQADAAAAAAAHAAoAAQADAAAAAAAIAAoAAQADAAAAAAAJAAoAAQADAAAAAAAKAAoAAQADAAAAAAAKAAkAAQADAAAAAAAKAAgAAQADAAAAAAAJAAgAAQADAAAAAAAIAAgAAQADAAAAAAAHAAgAAQADAAAAAAAGAAgAAQADAAAAAAAFAAgAAQADAAAAAAAEAAgAAQADAAAAAAADAAgAAQADAAAAAAACAAgAAQADAAAAAAACAAkAAQADAAAAAAADAAkAAQADAAAAAAAEAAkAAQADAAAAAAAFAAkAAQADAAAAAAAGAAkAAQADAAAAAAAHAAkAAQADAAAAAAAIAAkAAQADAAAAAAAJAAkAAQADAAAAAAAAAAYAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAAFAAUAAQABAAAAAAAGAAUAAQABAAAAAAAHAAUAAQABAAAAAAAIAAUAAQABAAAAAAAJAAUAAQABAAAAAAAKAAUAAQACAAAAAAD5/wcAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_8vxhi")
 
-[node name="platform" parent="." unique_id=175953230 instance=ExtResource("3_1marv")]
-position = Vector2(210, 552)
-scale = Vector2(0.40549105, 0.41401017)
+[node name="cloud" parent="." unique_id=1151595803 instance=ExtResource("5_m42xt")]
+position = Vector2(-897, 107)
 
 [node name="player" parent="." unique_id=366842889 instance=ExtResource("4_sgvlu")]
 position = Vector2(69, 631)
@@ -207,14 +118,6 @@ position = Vector2(537.00006, 499)
 [node name="coin3" parent="." unique_id=1308244586 instance=ExtResource("5_32x67")]
 position = Vector2(321, 528)
 
-[node name="platform2" parent="." unique_id=1879947007 instance=ExtResource("3_1marv")]
-position = Vector2(432, 264.99997)
-scale = Vector2(0.46835366, 0.4848805)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="platform2" unique_id=255331262]
-libraries/ = SubResource("AnimationLibrary_k2dri")
-autoplay = &"upDown"
-
 [node name="coin4" parent="." unique_id=251083010 instance=ExtResource("5_32x67")]
 position = Vector2(556, 196)
 
@@ -222,7 +125,6 @@ position = Vector2(556, 196)
 position = Vector2(1387, 573)
 
 [node name="teniAnime" type="AnimationPlayer" parent="enemyTeni" unique_id=1208622507]
-root_node = NodePath("../../platform3")
 libraries/ = SubResource("AnimationLibrary_ypo0x")
 autoplay = &"move"
 
@@ -241,26 +143,12 @@ position = Vector2(3001, 228)
 [node name="doorKey" parent="." unique_id=138178562 instance=ExtResource("14_u2bxs")]
 position = Vector2(2055, 427)
 
-[node name="platform3" parent="." unique_id=1566485177 instance=ExtResource("3_1marv")]
-position = Vector2(-382, 587)
-scale = Vector2(0.39999998, 0.3724601)
-
-[node name="plat3Ani" type="AnimationPlayer" parent="platform3" unique_id=441822591]
-libraries/ = SubResource("AnimationLibrary_m42xt")
-autoplay = &"move"
-
 [node name="pallrallaxBg" parent="." unique_id=529035039 instance=ExtResource("17_ypo0x")]
 
 [node name="deathZone2" parent="." unique_id=1618005237 instance=ExtResource("20_08ybn")]
 
 [node name="enemyBox" parent="." unique_id=715642427 instance=ExtResource("17_kk6hu")]
 position = Vector2(2302, 450)
-
-[node name="tree" type="TileMapLayer" parent="." unique_id=267160105]
-z_index = -1
-position = Vector2(0, -10)
-tile_map_data = PackedByteArray("AAAFAAAAAQAAAAAAAAD+/wEAAQABAAAAAAA=")
-tile_set = SubResource("TileSet_s2eko")
 
 [node name="coin5" parent="." unique_id=1403064581 instance=ExtResource("5_32x67")]
 position = Vector2(-272, 561)
@@ -269,3 +157,17 @@ position = Vector2(-272, 561)
 position = Vector2(3166, 404)
 
 [node name="bgMusic" parent="." unique_id=133999180 instance=ExtResource("23_m42xt")]
+
+[node name="treeAni" parent="." unique_id=701071156 instance=ExtResource("24_60ld6")]
+position = Vector2(1234, 392)
+
+[node name="treeAni2" parent="." unique_id=656201360 instance=ExtResource("24_60ld6")]
+position = Vector2(1119, 397)
+
+[node name="treeAnime2" parent="." unique_id=2001271282 instance=ExtResource("24_7n1j6")]
+z_index = -1
+position = Vector2(-649, 659)
+
+[node name="treeAnime3" parent="." unique_id=528508333 instance=ExtResource("24_7n1j6")]
+z_index = -1
+position = Vector2(2188, 278)

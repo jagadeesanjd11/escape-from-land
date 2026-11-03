@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://wkdpkjpg6e2n" path="res://scripts/menu.gd" id="1_8hxod"]
 [ext_resource type="Texture2D" uid="uid://xmy3gkpvwwtt" path="res://assets/Sprites/Backgrounds/Default/background_clouds.png" id="1_e5g8k"]
 [ext_resource type="FontFile" uid="uid://dqjorj1otiub5" path="res://assets/fonts/MotionControl-Bold.otf" id="3_bo06a"]
+[ext_resource type="AudioStream" uid="uid://dfkslh7katlgm" path="res://assets/Sounds/bg/main_music.mp3" id="4_15se8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13m1y"]
 bg_color = Color(0.23216558, 0.6644609, 0.74603605, 1)
@@ -63,6 +64,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_sb0l6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_063ov")
 text = "Exit"
 icon_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=690074358]
+stream = ExtResource("4_15se8")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="playBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="exitBtn" to="." method="_on_exit_btn_pressed"]

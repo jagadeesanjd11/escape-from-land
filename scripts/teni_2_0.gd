@@ -11,7 +11,9 @@ var wait_time: float = 2 # Wait for 2 seconds
 func _ready() -> void:
 	teniAni2_0.flip_h = true
 	teniAni2_0.play("flay")
-	print(teniAni2_0)
+	print("teni ", Coman.game_level)
+	if Coman.game_level == 9:
+		move_speed = 325
 func _physics_process(delta: float) -> void:
 	if follow == true:
 		var direction = position.direction_to(player.global_position).normalized()
@@ -36,12 +38,13 @@ func _on_teni_area_2_0_body_entered(body: Node2D) -> void:
 	Coman.hurt(body, soundHurt)
 
 func _on_stop_area_teni_2_0_body_entered(body: Node2D) -> void:
-	print("body faly", body.name)
+	print("body 1", body.name)
 	if body.name == "teni2_0" || body.name == "teni2_1":
 		follow = false
 		teniAni2_0.flip_h = false
 
 func _on_stop_area_enemy_body_exited(body: Node2D) -> void:
-	if body.name == "teni2_0":
+	print("body 2", body.name)
+	if body.name == "teni2_0" || body.name == "teni2_1" || body.name == "teni2_2":
 		follow = false
 		teniAni2_0.flip_h = false

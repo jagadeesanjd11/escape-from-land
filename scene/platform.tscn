@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://bvx83ehcpbdds"]
 
 [ext_resource type="Texture2D" uid="uid://du4e3qiqsvtal" path="res://assets/platform.png" id="1_s0ih4"]
+[ext_resource type="Script" uid="uid://c8dsnjnipb5ye" path="res://scripts/platform_player_coming_area.gd" id="2_wfaay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vxhi"]
 size = Vector2(728, 135)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2eko"]
+size = Vector2(179, 267)
 
 [node name="platform" type="Node2D" unique_id=175953230]
 
@@ -18,3 +22,12 @@ texture = ExtResource("1_s0ih4")
 z_index = 1
 position = Vector2(404, 172.5)
 shape = SubResource("RectangleShape2D_8vxhi")
+
+[node name="platformPlayerComingArea" type="Area2D" parent="." unique_id=1582176223]
+script = ExtResource("2_wfaay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platformPlayerComingArea" unique_id=1260754382]
+position = Vector2(390, -28.5)
+shape = SubResource("RectangleShape2D_s2eko")
+
+[connection signal="body_exited" from="platformPlayerComingArea" to="platformPlayerComingArea" method="_on_body_exited"]

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ctco1gkefm1y1" path="res://assets/control/up.png" id="3_fj5cn"]
 [ext_resource type="Texture2D" uid="uid://bip84wiwxldnw" path="res://assets/control/pause.png" id="4_iy58a"]
 
-[node name="control" type="Node2D" unique_id=227835840]
+[node name="control" type="Node2D" unique_id=1002403392]
 scale = Vector2(0.84000003, 0.92)
 metadata/_edit_horizontal_guides_ = [978.0, 419.0]
 metadata/_edit_vertical_guides_ = [1577.0]

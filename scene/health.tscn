@@ -6,7 +6,7 @@
 
 [node name="health" type="CanvasLayer" unique_id=1920023983]
 metadata/_edit_horizontal_guides_ = [190.0]
-metadata/_edit_vertical_guides_ = [90.0]
+metadata/_edit_vertical_guides_ = [90.0, 228.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1988859892]
 position = Vector2(134.00002, 121.00001)
@@ -17,13 +17,16 @@ texture = ExtResource("1_ki7ji")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1724.0
+offset_left = -1691.0
 offset_top = 83.0
-offset_right = -1660.0
+offset_right = -1627.0
 offset_bottom = 159.0
 grow_horizontal = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 theme_override_colors/font_color = Color(0.7921569, 0.45490196, 0.12941177, 1)
 theme_override_fonts/font = ExtResource("2_3ewot")
 theme_override_font_sizes/font_size = 75
 text = "10"
 script = ExtResource("2_ifnqg")
+metadata/_edit_use_anchors_ = true

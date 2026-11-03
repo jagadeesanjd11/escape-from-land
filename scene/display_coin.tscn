@@ -6,7 +6,7 @@
 
 [node name="displayCoin" type="CanvasLayer" unique_id=643231603]
 metadata/_edit_horizontal_guides_ = [32.0, 167.0, 192.0]
-metadata/_edit_vertical_guides_ = [99.0, 90.0]
+metadata/_edit_vertical_guides_ = [99.0, 90.0, 168.0, 228.0]
 
 [node name="Label" type="Label" parent="." unique_id=1895088846]
 offset_left = 226.0

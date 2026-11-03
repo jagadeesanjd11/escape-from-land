@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dtixf2s3i4gj6"]
+
+[ext_resource type="Texture2D" uid="uid://blu1otxmlu2kd" path="res://assets/could2.png" id="1_720ap"]
+[ext_resource type="Texture2D" uid="uid://dkdwynk8o26fy" path="res://assets/could.png" id="2_02t6m"]
+
+[sub_resource type="Animation" id="Animation_n0lya"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteCloud2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2641, 264.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteCloud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2201, 140)]
+}
+
+[sub_resource type="Animation" id="Animation_chf25"]
+resource_name = "moving"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteCloud2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2641, 264.00003), Vector2(-325, 281)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteCloud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2201, 140), Vector2(-259, 175)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dcphb"]
+_data = {
+&"RESET": SubResource("Animation_n0lya"),
+&"moving": SubResource("Animation_chf25")
+}
+
+[node name="cloud" type="Node2D" unique_id=1151595803]
+
+[node name="SpriteCloud2" type="Sprite2D" parent="." unique_id=859992065]
+position = Vector2(2641, 264.00003)
+scale = Vector2(1, 1.0102115)
+texture = ExtResource("1_720ap")
+
+[node name="SpriteCloud" type="Sprite2D" parent="." unique_id=1043121605]
+position = Vector2(2201, 140)
+scale = Vector2(1, 1.0050927)
+texture = ExtResource("2_02t6m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=562148900]
+libraries/ = SubResource("AnimationLibrary_dcphb")
+autoplay = &"moving"
