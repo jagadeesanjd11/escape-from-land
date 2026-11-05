@@ -14,14 +14,10 @@ scale = Vector2(2.5065634, 2.9231257)
 texture = ExtResource("1_ki7ji")
 
 [node name="Label" type="Label" parent="." unique_id=950305391]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1691.0
-offset_top = 83.0
-offset_right = -1627.0
-offset_bottom = 159.0
-grow_horizontal = 0
+offset_left = 217.0
+offset_top = 79.0
+offset_right = 281.0
+offset_bottom = 155.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 theme_override_colors/font_color = Color(0.7921569, 0.45490196, 0.12941177, 1)
@@ -29,4 +25,3 @@ theme_override_fonts/font = ExtResource("2_3ewot")
 theme_override_font_sizes/font_size = 75
 text = "10"
 script = ExtResource("2_ifnqg")
-metadata/_edit_use_anchors_ = true

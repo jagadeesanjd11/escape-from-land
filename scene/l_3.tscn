@@ -433,7 +433,7 @@ position = Vector2(1244, 527)
 [node name="displayCoin" parent="player" unique_id=643231603 instance=ExtResource("4_tss1g")]
 
 [node name="control" parent="player" unique_id=227835840 instance=ExtResource("3_5o5lb")]
-position = Vector2(-996, -474)
+position = Vector2(-974, -523)
 
 [node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("4_ispob")]
 script = ExtResource("6_tss1g")

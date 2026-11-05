@@ -1,0 +1,5 @@
+>keytool -genkey -v -keystore mygame.keystore -alias mygamealias -keyalg RSA -keysize 2048 -validity 10000
+
+mygamealias username
+
+Jaga@AI11

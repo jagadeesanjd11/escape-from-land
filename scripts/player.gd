@@ -24,9 +24,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	if Input.is_action_just_pressed("move_left"):
+	
+	if Input.is_action_pressed("move_left"):
 		playerAni.play("run")
-	if Input.is_action_just_pressed("move_right"):
+	if Input.is_action_pressed("move_right"):
 		playerAni.play("run")
 	if Input.is_action_just_released("move_left"):
 		playerAni.play("stand")
