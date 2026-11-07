@@ -8,6 +8,7 @@ extends CharacterBody2D
 var follow:bool = true
 var time_passed: float = 0.0
 var wait_time: float = 2 # Wait for 2 seconds
+var teniHit: bool = false
 func _ready() -> void:
 	teniAni2_0.flip_h = true
 	teniAni2_0.play("flay")
@@ -16,9 +17,16 @@ func _ready() -> void:
 		move_speed = 325
 func _physics_process(delta: float) -> void:
 	if follow == true:
-		var direction = position.direction_to(player.global_position).normalized()
-		velocity = direction * move_speed
-		move_and_slide()
+		if teniHit == true:
+			var direction = position.direction_to(Vector2(player.global_position.x-150,player.global_position.y)).normalized()
+			velocity = direction * move_speed
+			move_and_slide()
+			teniHit= false
+		else:
+			var direction = position.direction_to(player.global_position).normalized()
+			velocity = direction * move_speed
+			move_and_slide()
+			teniHit = true
 	else:
 		var direction: Vector2 = global_position.direction_to(Vector2(473,572))
 		velocity = direction * move_speed
@@ -36,7 +44,8 @@ func _physics_process(delta: float) -> void:
 			$AnimationPlayer.play("moving")
 func _on_teni_area_2_0_body_entered(body: Node2D) -> void:
 	Coman.hurt(body, soundHurt)
-
+	if body.name == "player":
+		teniHit=true
 func _on_stop_area_teni_2_0_body_entered(body: Node2D) -> void:
 	print("body 1", body.name)
 	if body.name == "teni2_0" || body.name == "teni2_1":

@@ -8,6 +8,7 @@ extends CharacterBody2D
 var follow:bool = true
 var time_passed: float = 0.0
 var wait_time: float = 2 # Wait for 2 seconds
+var flayHit: bool = false
 
 func _ready() -> void:
 	flayAni2_0.flip_h = true
@@ -18,9 +19,16 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if follow == true:
-		var direction = position.direction_to(player.global_position).normalized()
-		velocity = direction * move_speed
-		move_and_slide()
+		if flayHit == true:
+			var direction = position.direction_to(Vector2(player.global_position.x-150,player.global_position.y)).normalized()
+			velocity = direction * move_speed
+			move_and_slide()
+			flayHit= false
+		else:
+			var direction = position.direction_to(player.global_position).normalized()
+			velocity = direction * move_speed
+			move_and_slide()
+			flayHit = true
 	else:
 		var direction: Vector2 = global_position.direction_to(Vector2(473,572))
 		velocity = direction * move_speed
@@ -40,7 +48,8 @@ func _process(delta: float) -> void:
 
 func _on_flay_area_2_0_body_exited(body: Node2D) -> void:
 	Coman.hurt(body, soundHurt)
-
+	if body.name == "player":
+		flayHit=true
 
 func _on_stop_area_enemy_body_exited(body: Node2D) -> void:
 	print("body faly", body.name)

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://f0djv8gpmcxr" path="res://scene/game_paused.tscn" id="1_8c1hm"]
 [ext_resource type="PackedScene" uid="uid://b47v56moeorde" path="res://scene/bg_music.tscn" id="2_bjrds"]
 [ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="3_t8p2n"]
+[ext_resource type="PackedScene" uid="uid://7acu41k3828l" path="res://scene/display_level.tscn" id="4_4gwqr"]
 [ext_resource type="PackedScene" uid="uid://uw0o6ovrymhm" path="res://scene/player.tscn" id="4_4kdsy"]
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="5_klqh6"]
 [ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="5_x3oxt"]
@@ -641,6 +642,8 @@ tile_set = SubResource("TileSet_8vxhi")
 
 [node name="player" parent="." unique_id=366842889 instance=ExtResource("4_4kdsy")]
 position = Vector2(951, 547)
+
+[node name="DisplayLevel" parent="player" unique_id=1077165461 instance=ExtResource("4_4gwqr")]
 
 [node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("5_klqh6")]
 script = ExtResource("5_x3oxt")

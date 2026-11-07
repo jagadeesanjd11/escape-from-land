@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="8_sb0l6"]
 [ext_resource type="PackedScene" uid="uid://ccdx7q4lu4qof" path="res://scene/death_zone_2.tscn" id="9_1yhvw"]
 [ext_resource type="PackedScene" uid="uid://cs3qvasi6fcj" path="res://scene/lifet.tscn" id="10_2tepl"]
+[ext_resource type="PackedScene" uid="uid://7acu41k3828l" path="res://scene/display_level.tscn" id="10_10h22"]
 [ext_resource type="PackedScene" uid="uid://r0ituhten61u" path="res://scene/coin.tscn" id="11_wynxm"]
 [ext_resource type="PackedScene" uid="uid://bscy55m1wymbr" path="res://scene/enemy_box.tscn" id="12_molgw"]
 [ext_resource type="PackedScene" uid="uid://cash2p5y5vo55" path="res://scene/enemy_warm.tscn" id="13_wynxm"]
@@ -745,6 +746,8 @@ script = ExtResource("20_1pe3v")
 
 [node name="control" parent="player" unique_id=227835840 instance=ExtResource("5_1yhvw")]
 position = Vector2(-954, -533.00006)
+
+[node name="DisplayLevel" parent="player" unique_id=1077165461 instance=ExtResource("10_10h22")]
 
 [node name="pallrallaxBg" parent="." unique_id=529035039 instance=ExtResource("8_sb0l6")]
 

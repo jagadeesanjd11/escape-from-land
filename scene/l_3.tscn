@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6pn0otcw32mi" path="res://assets/ground.png" id="2_5o5lb"]
 [ext_resource type="PackedScene" uid="uid://uw0o6ovrymhm" path="res://scene/player.tscn" id="2_bcn7i"]
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="3_5o5lb"]
+[ext_resource type="PackedScene" uid="uid://7acu41k3828l" path="res://scene/display_level.tscn" id="4_ekcqu"]
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="4_ispob"]
 [ext_resource type="PackedScene" uid="uid://dppfptebgmp7r" path="res://scene/display_coin.tscn" id="4_tss1g"]
 [ext_resource type="PackedScene" uid="uid://cxlvbqipawaqg" path="res://scene/health.tscn" id="5_2o8p5"]
@@ -429,6 +430,8 @@ tile_set = SubResource("TileSet_iwj73")
 
 [node name="player" parent="." unique_id=366842889 instance=ExtResource("2_bcn7i")]
 position = Vector2(1244, 527)
+
+[node name="DisplayLevel" parent="player" unique_id=1077165461 instance=ExtResource("4_ekcqu")]
 
 [node name="displayCoin" parent="player" unique_id=643231603 instance=ExtResource("4_tss1g")]
 

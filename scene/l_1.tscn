@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cxmnfoi3ofwr6" path="res://scene/endpoint.tscn" id="22_08ybn"]
 [ext_resource type="PackedScene" uid="uid://b47v56moeorde" path="res://scene/bg_music.tscn" id="23_m42xt"]
 [ext_resource type="PackedScene" uid="uid://cdc20w1h3hon" path="res://scene/tree_anime_2.tscn" id="24_7n1j6"]
+[ext_resource type="PackedScene" uid="uid://7acu41k3828l" path="res://scene/display_level.tscn" id="24_21gt0"]
 [ext_resource type="PackedScene" uid="uid://bf72wkb24nfws" path="res://scene/tree_ani.tscn" id="24_60ld6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypo0x"]
@@ -108,6 +109,8 @@ scale = Vector2(0.8164267, 0.9022038)
 script = ExtResource("8_u2bxs")
 
 [node name="gamePaused" parent="player" unique_id=1924133955 instance=ExtResource("12_5yrwr")]
+
+[node name="DisplayLevel" parent="player" unique_id=1077165461 instance=ExtResource("24_21gt0")]
 
 [node name="coin" parent="." unique_id=499694729 instance=ExtResource("5_32x67")]
 position = Vector2(268.00003, 528)

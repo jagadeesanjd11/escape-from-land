@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="6_pb8js"]
 [ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="7_nfvu2"]
 [ext_resource type="PackedScene" uid="uid://f0djv8gpmcxr" path="res://scene/game_paused.tscn" id="7_skhqp"]
+[ext_resource type="PackedScene" uid="uid://7acu41k3828l" path="res://scene/display_level.tscn" id="10_0j0sj"]
 [ext_resource type="Texture2D" uid="uid://c6pn0otcw32mi" path="res://assets/ground.png" id="10_37gjy"]
 [ext_resource type="PackedScene" uid="uid://hgekmo6xsuen" path="res://scene/flay_2_0.tscn" id="11_npiee"]
 [ext_resource type="PackedScene" uid="uid://r6oh7b835sgi" path="res://scene/teni_2_0.tscn" id="12_skhqp"]
@@ -708,6 +709,8 @@ script = ExtResource("3_pb8js")
 [node name="control" parent="player" unique_id=1002403392 instance=ExtResource("6_pb8js")]
 z_index = 1
 position = Vector2(-975, -542.00006)
+
+[node name="DisplayLevel" parent="player" unique_id=1077165461 instance=ExtResource("10_0j0sj")]
 
 [node name="pallrallaxBg" parent="." unique_id=529035039 instance=ExtResource("7_nfvu2")]
 

@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="7_gwusf"]
 [ext_resource type="PackedScene" uid="uid://bvx83ehcpbdds" path="res://scene/platform.tscn" id="9_2x3vc"]
 [ext_resource type="PackedScene" uid="uid://ccdx7q4lu4qof" path="res://scene/death_zone_2.tscn" id="11_cbtdu"]
+[ext_resource type="PackedScene" uid="uid://7acu41k3828l" path="res://scene/display_level.tscn" id="11_w88n8"]
 [ext_resource type="PackedScene" uid="uid://bpwajsjof6kn" path="res://scene/pallrallax_bg.tscn" id="12_drkf4"]
 [ext_resource type="PackedScene" uid="uid://b81sk8qdolmm8" path="res://scene/enemyTeni.tscn" id="13_cykpx"]
 [ext_resource type="PackedScene" uid="uid://bscy55m1wymbr" path="res://scene/enemy_box.tscn" id="14_7s2l1"]
@@ -409,6 +410,8 @@ script = ExtResource("7_gwusf")
 
 [node name="control" parent="player" unique_id=227835840 instance=ExtResource("6_cbtdu")]
 position = Vector2(-990, -550.00006)
+
+[node name="DisplayLevel" parent="player" unique_id=1077165461 instance=ExtResource("11_w88n8")]
 
 [node name="platform" parent="." unique_id=175953230 instance=ExtResource("9_2x3vc")]
 position = Vector2(2219, 658)

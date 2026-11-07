@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://uw0o6ovrymhm" path="res://scene/player.tscn" id="2_5oe11"]
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="3_w018g"]
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="4_t5tno"]
+[ext_resource type="PackedScene" uid="uid://7acu41k3828l" path="res://scene/display_level.tscn" id="5_e2x5j"]
 [ext_resource type="PackedScene" uid="uid://cxlvbqipawaqg" path="res://scene/health.tscn" id="5_lynp3"]
 [ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="6_rxy3r"]
 [ext_resource type="Texture2D" uid="uid://c6pn0otcw32mi" path="res://assets/ground.png" id="8_lynp3"]
@@ -582,6 +583,8 @@ tile_set = SubResource("TileSet_8vxhi")
 
 [node name="player" parent="." unique_id=366842889 instance=ExtResource("2_5oe11")]
 position = Vector2(957, 542)
+
+[node name="DisplayLevel" parent="player" unique_id=1077165461 instance=ExtResource("5_e2x5j")]
 
 [node name="displayKey" parent="player" unique_id=1387269502 instance=ExtResource("3_w018g")]
 script = ExtResource("6_rxy3r")

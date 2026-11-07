@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bbm7j6qdcks7j" path="res://scripts/key_display.gd" id="7_d7stb"]
 [ext_resource type="PackedScene" uid="uid://havttcdynfwt" path="res://scene/health_addon.tscn" id="7_pm1xu"]
 [ext_resource type="PackedScene" uid="uid://x12toy6txrud" path="res://scene/key_display.tscn" id="8_qc4dy"]
+[ext_resource type="PackedScene" uid="uid://7acu41k3828l" path="res://scene/display_level.tscn" id="9_4nchy"]
 [ext_resource type="PackedScene" uid="uid://r0ituhten61u" path="res://scene/coin.tscn" id="10_5288a"]
 [ext_resource type="PackedScene" uid="uid://bt3fhduir7dco" path="res://scene/control.tscn" id="11_fp0vn"]
 [ext_resource type="PackedScene" uid="uid://bke5i802mc52t" path="res://scene/start_point.tscn" id="12_pm1xu"]
@@ -478,6 +479,10 @@ script = ExtResource("7_d7stb")
 
 [node name="health" parent="player" unique_id=1920023983 instance=ExtResource("6_ciovm")]
 
+[node name="displayCoin" parent="player" unique_id=643231603 instance=ExtResource("21_d7stb")]
+
+[node name="DisplayLevel" parent="player" unique_id=1077165461 instance=ExtResource("9_4nchy")]
+
 [node name="pallrallaxBg" parent="." unique_id=529035039 instance=ExtResource("4_eorcc")]
 
 [node name="enemyTeni" parent="." unique_id=1600189340 instance=ExtResource("5_mw7fw")]
@@ -534,8 +539,6 @@ position = Vector2(6968, -376)
 
 [node name="deathZone2" parent="." unique_id=1618005237 instance=ExtResource("20_d7stb")]
 position = Vector2(102, -289)
-
-[node name="displayCoin" parent="." unique_id=643231603 instance=ExtResource("21_d7stb")]
 
 [node name="cloud" parent="." unique_id=1151595803 instance=ExtResource("22_plm27")]
 position = Vector2(4027, -456)

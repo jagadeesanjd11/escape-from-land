@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://7acu41k3828l"]
+
+[ext_resource type="FontFile" uid="uid://dqjorj1otiub5" path="res://assets/fonts/MotionControl-Bold.otf" id="2_cmig1"]
+
+[sub_resource type="GDScript" id="GDScript_2qktj"]
+script/source = "extends CanvasLayer
+@onready var  label = $Label
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	label.text = \"LEVEL \" + str(Coman.game_level)
+"
+
+[node name="DisplayLevel" type="CanvasLayer" unique_id=1077165461]
+script = SubResource("GDScript_2qktj")
+
+[node name="Label" type="Label" parent="." unique_id=167461767]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_top = 70.0
+offset_right = 0.5
+offset_bottom = 111.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_cmig1")
+theme_override_font_sizes/font_size = 40
