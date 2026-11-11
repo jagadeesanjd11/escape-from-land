@@ -15,17 +15,16 @@ func save_game_data(level_name: String,l_no:int, coins:int) -> void:
 	file.store_line(json_string)
 
 func _ready() -> void:
-	print("Coman.game_level ", Coman.game_level)
-	if Coman.game_level >= endLevel:
+	#print("Coman.game_level ", Coman.game_level)
+	Coman.game_level += 1
+	Coman.overAllCoin += Coman.coinCount 
+	save_game_data("res://scene/l_"+ str(Coman.game_level)+ ".tscn", Coman.game_level, Coman.overAllCoin)
+	winSound.play()
+	if Coman.game_level > endLevel:
 		nxtBtn.text = "Play again"
 		label.text = "The End"
-	else:
-		Coman.game_level += 1
-		Coman.overAllCoin += Coman.coinCount 
-		save_game_data("res://scene/l_"+ str(Coman.game_level)+ ".tscn", Coman.game_level, Coman.overAllCoin)
-	winSound.play()
 func _on_nxt_btn_pressed() -> void:
-	if Coman.game_level >= endLevel:
+	if Coman.game_level > endLevel:
 		Coman.game_level = 1
 		Coman.overAllCoin = 0
 		save_game_data("res://scene/l_"+ str(Coman.game_level)+ ".tscn", Coman.game_level, Coman.overAllCoin)
